@@ -1,0 +1,55 @@
+.partners {
+	padding-top: rem(96px);
+	padding-bottom: rem(96px);
+	&__title {
+		margin-bottom: rem(60px);
+	}
+	&__articles {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__article {
+		width: calc(25% - 10px);
+		height: 142px;
+		padding: 10px;
+		margin-bottom: 20px;
+		&--clear {
+			height: 0px;
+			overflow: hidden;
+		}
+	}
+}
+
+.body {
+	&--light {
+		.partners {
+			&__title {
+
+			}
+			&__articles {
+
+			}
+			&__article {
+				&--clear {
+
+				}
+			}
+		}
+	}
+	&--dark {
+		.partners {
+			&__title {
+
+			}
+			&__articles {
+
+			}
+			&__article {
+				&--clear {
+
+				}
+			}
+		}
+	}
+}

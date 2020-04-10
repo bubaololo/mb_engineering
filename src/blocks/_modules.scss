@@ -1,0 +1,21 @@
+@import "modules/ui-library/ui-library";
+@import "modules/panel/panel";
+@import "modules/header/header";
+@import "modules/footer/footer";
+
+@import "modules/1_intro/intro";
+@import "modules/1_factoid/factoid";
+@import "modules/1_partners/partners";
+
+// Плагины
+
+
+// Шаблон для переключения тем
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
+}

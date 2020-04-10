@@ -1,0 +1,137 @@
+.header {
+	&__topline {
+		background-color: $gray;
+		color: $light;
+		padding-top: rem(10px);
+		padding-bottom: rem(10px);
+		border-bottom: 2px solid transparent;
+		&-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&-left {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: calc(100% / 12 * 8 - 10px);
+		}
+		&-right {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: calc(100% / 12 * 4 - 10px);
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		color: $light;
+		text-decoration: none;
+		padding-top: rem(10px);
+		padding-bottom: rem(10px);
+		margin-right: rem(16px);
+		&:hover {
+			opacity: 0.7;
+		}
+		svg {
+			display: block;
+			margin-right: 10px;
+		}
+		span {
+			font-size: rem(14px);
+		}
+	}
+	&__langs {
+		display: flex;
+		align-items: center;
+		margin-left: 14px;
+	}
+	&__lang {
+		font-size: rem(14px);
+		color: $light;
+		text-decoration: none;
+		&--selected {
+			color: $red;
+			font-weight: bold;
+		}
+		&-sep {
+			margin-left: rem(8px);
+			margin-right: rem(8px);
+		}
+	}
+	&__downline {
+		border-bottom: 2px solid transparent;
+		&-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: rem(10px);
+			padding-bottom: rem(10px);
+		}
+	}
+	&__logo {
+		display: block;
+		img {
+			display: block;
+			width: 140px;
+			height: 72px;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&__menu {
+		flex-grow: 1;
+		padding-left: rem(45px);
+		padding-right: rem(45px);
+		display: flex;
+		justify-content: space-between;
+	}
+	&__menu-link {
+		font-size: rem(14px);
+		text-decoration: none;
+		font-weight: 500;
+		&--active {
+			color: $red;
+		}
+	}
+	&__btn {
+		width: 180px;
+		margin-left: rem(20px);
+	}
+}
+
+.body {
+	&--light {
+		.header {
+			&__topline {
+
+			}
+			&__downline {
+				background-color: #F7F9FA;
+			}
+			&__menu-link {
+				color: $gray;
+			}
+		}
+	}
+	&--dark {
+		.header {
+			&__topline {
+				border-color: $light;
+				background-color: $black;
+			}
+			&__downline {
+				background-color: $black;
+				border-color: $light;
+			}
+			&__logo {
+				background-color: $light;
+			}
+			&__menu-link {
+				color: $light;
+			}
+		}
+	}
+}

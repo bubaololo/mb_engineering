@@ -1,0 +1,31 @@
+.factoid {
+	background-color: #F7F9FA;
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: rem(130px);
+	padding-bottom: rem(130px);
+	&__container {
+
+	}
+	&__columns {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__column {
+		&--left {
+			width: calc(100% / 12 * 5);
+			flex-shrink: 0;
+		}
+		&--right {
+			width: calc(100% / 12 * 5);
+		}
+	}
+	&__thumb {
+		width: 476px;
+		height: 476px;
+		border-radius: 500px;
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,188 @@
+.hide-bg {
+	// У этого класса выпилиываем фон, когда выключены картинки
+}
+
+.title {
+	font-weight: bold;
+	padding-bottom: rem(22px);
+	position: relative;
+	&--center {
+		text-align: center;
+	}
+	&--line {
+		&:after {
+			content: "";
+			width: 126px;
+			background-color: $red;
+			height: 2px;
+			display: block;
+			position: absolute;
+			left: 0px;
+			top: 100%;
+		}
+	}
+	span {
+		font-size: rem(48px);
+		line-height: rem(56px);
+	}
+}
+
+.search {
+	position: relative;
+	overflow: hidden;
+	border-radius: 5px;
+	width: 100%;
+	font-size: rem(14px);
+	&__input {
+		border: none;
+		display: block;
+		width: 100%;
+		height: rem(40px);
+		padding-left: rem(17px);
+		padding-right: rem(57px);
+		font-weight: 300;
+		&::placeholder {
+			font-family: $font;
+			font-weight: 300;
+		}
+	}
+	&__btn {
+		position: absolute;
+		width: rem(40px);
+		border: none;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		background-color: $light;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	&__pict {
+		display: block;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		visibility: visible;
+		transition: 0.3s all;
+		&--cover {
+			object-fit: cover;
+		}
+		&--contain {
+			object-fit: contain;
+		}
+	}
+	&__discript {
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+		text-align: center;
+		max-width: 60%;
+		margin: auto;
+		// z-index: -1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.3s opacity;
+	}
+	&--hide {
+		display: flex;
+		justify-content: center;
+		alight-items: center;
+		.image__pict {
+			opacity: 0;
+		}
+		.image__discript {
+			visibility: visible;
+			opacity: 1;
+			transition: 0.3s opacity;
+		}
+	}
+}
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	font-weight: 500;
+	font-size: rem(14px);
+	text-decoration: none;
+	color: $light;
+	background-color: $red;
+	border: 1px solid $red;
+	&:hover {
+		opacity: 0.7;
+	}
+	&--50 {
+		height: rem(50px);
+	}
+	&--60 {
+		height: rem(60px);
+	}
+	&--gray-light {
+		
+	}
+	svg {
+		margin-right: rem(10px);
+	}
+	span {
+
+	}
+}
+
+.body {
+	&--light {
+		.title {
+			font-weight: bold;
+			span {
+				color: $black;
+			}
+		}
+		.btn {
+			&--gray-light {
+				color: $gray;
+				border: 1px solid $gray;
+				background: none;
+			}
+		}
+		.image {
+			&__discript {
+				color: $black;
+			}
+		}
+	}
+	&--dark {
+		.title {
+			font-weight: bold;
+			span {
+				color: $light;
+			}
+		}
+		.btn {
+			&--gray-dark {
+				color: $light;
+				border-color: $light;
+				background-color: none;
+			}
+		}
+		.image {
+			&__discript {
+				color: $light;
+			}
+		}
+	}
+}
