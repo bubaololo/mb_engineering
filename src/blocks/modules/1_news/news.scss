@@ -1,0 +1,33 @@
+.front-news {
+	padding-top: rem(100px);
+	padding-bottom: rem(100px);
+	background-position: left rem(100px) ;
+	background-repeat: no-repeat;
+	&__articles {
+		justify-content: space-between;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: rem(30px);
+	}
+	&__control {
+		text-align: center;
+	}
+	&__btn {
+		width: rem(230px);
+	}
+}
+
+.body {
+	&--light {
+		.front-news {
+			border-bottom: 1px solid #E0E0E0;
+			background-image: url('../img/news-bg.png');
+		}
+	}
+	&--dark {
+		.front-news {
+			border-bottom: 1px solid $light;
+			background: none !important;
+		}
+	}
+}

@@ -1,0 +1,74 @@
+.map {
+	position: relative;
+	&__wrap {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		background-color: $brown;
+	}
+	&__container {
+		padding-top: rem(20px);
+		padding-bottom: rem(20px);
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		align-items: center;
+		min-height: 700px;
+	}
+	&__card {
+		width: 50%;
+		padding: rem(96px);
+		background-repeat: no-repeat;
+		background-position: calc(100% - 20px) center;
+	}
+	&__title {
+		margin-bottom: rem(60px);
+	}
+	&__line {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(24px);
+		&-icon {
+			width: 20px;
+			height: 20px;
+			margin-right: 20px;
+		}
+		&-text {
+			font-weight: 300;
+		}
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+
+.body {
+	&--light {
+		.map {
+			&__card {
+				background-color: $light;
+			}
+			&__line {
+				color: #58595B;
+			}
+		}
+	}
+	&--dark {
+		.map {
+			&__card {
+				background-image: none !important;
+				background-color: $black;
+				color: $light;
+			}
+			&__line {
+				color: $light;
+			}
+		}
+	}
+}

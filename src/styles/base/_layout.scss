@@ -10,12 +10,16 @@ html {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	&__content {
+		padding-top: rem(58px);
+		padding-bottom: rem(100px);
+	}
 }
 
 .content {
 	flex-grow: 1;
-    min-height: 0px;
-    min-width: 0px;
+	min-height: 0px;
+	min-width: 0px;
 }
 
 .container {

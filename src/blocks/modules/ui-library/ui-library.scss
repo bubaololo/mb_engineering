@@ -2,12 +2,59 @@
 	// У этого класса выпилиываем фон, когда выключены картинки
 }
 
+.ui {
+	&__title {
+		margin-bottom: rem(50px);
+	}
+	&__link-cards {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: rem(50px);
+	}
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		padding-left: 140px;
+		padding-right: 140px;
+		flex-wrap: wrap;
+		margin-bottom: rem(50px);
+	}
+}
+
+.breadcrumbs {
+	display: flex;
+	align-items:center;
+	margin-bottom: rem(50px);
+	&__link {
+		text-decoration: none;
+		color: $black;
+		&:hover {
+			opacity: 0.7;
+		}
+		&--static {
+			color: #738D9A;
+			font-weight: 300;
+			pointer-events: none;
+		}
+	}
+	&__arrow {
+		display: block;
+		height: rem(8px);
+		width: rem(8px);
+		margin-left: rem(10px);
+		margin-right: rem(10px);
+	}
+}
+
 .title {
 	font-weight: bold;
 	padding-bottom: rem(22px);
 	position: relative;
+	display: flex;
+	justify-content: space-between;
 	&--center {
-		text-align: center;
+		justify-content: center;
 	}
 	&--line {
 		&:after {
@@ -21,9 +68,153 @@
 			top: 100%;
 		}
 	}
+	&__btn {
+		width: rem(230px);
+	}
 	span {
 		font-size: rem(48px);
 		line-height: rem(56px);
+		margin-right: rem(40px);
+	}
+}
+
+.title-card {
+	min-height: rem(360px);
+	overflow: hidden;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: rem(60px);
+	&__wrapper {
+		background: linear-gradient(90deg, #F7F9FA 62%, rgba(255, 255, 255, 0) 100%);
+	}
+	&__content {
+		width: calc(100% / 12 * 7);
+		padding: rem(50px);
+	}
+	&__title {
+		font-weight: 500;
+		font-size: rem(24px);
+		margin-bottom: rem(35px);
+	}
+	&__text {
+		color: #58595B;
+		line-height: 1.5;
+		font-weight: 300;
+	}
+}
+
+.accent-text {
+	border-radius: 5px;
+	border: 1px solid #C39367;
+	padding: rem(20px) rem(34px);
+	line-height: 1.5;
+	margin-bottom: rem(60px);
+}
+
+.subtitle {
+	margin-bottom: rem(60px);
+	font-weight: 500;
+	font-size: rem(36px);
+	line-height: rem(42px);
+}
+
+.link-card {
+	background: #F7F9FA;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	color: $black;
+	text-decoration: none;
+	margin-bottom: 20px;
+	justify-content: space-between;
+	&--clear {
+		overflow: hidden;
+		height: 0px;
+		margin-bottom: 0px;
+	}
+	&--4 {
+		width: calc(100% / 3 - 40px / 3);
+	}
+	&--6 {
+		width: calc(50% - 10px);
+	}
+	&--12 {
+		width: 100%;
+	}
+	&:hover {
+		opacity: 0.7;
+	}
+	&__left {
+		padding-top: rem(52px);
+		padding-left: rem(50px);
+		padding-bottom: rem(52px);
+		padding-right: rem(15px);
+	}
+	&__right {
+		padding-top: rem(28px);
+		padding-right: rem(50px);
+		padding-bottom: rem(28px);
+		padding-left: rem(15px);
+		flex-shrink: 0;
+		text-align: center;
+		svg {
+			display: block;
+			width: 50px;
+			height: 46px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: rem(4px);
+		}
+	}
+	&__discript {
+		text-decoration: underline;
+		font-weight: 300;
+		font-size: rem(14px);
+	}
+}
+
+.contact-card {
+	width: 33%;
+	text-align: center;
+	&__thumb {
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 200px;
+		overflow: hidden;
+		width: 178px;
+		height: 178px;
+		margin-bottom: rem(20px);
+		img {
+			display: block;
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	&__name {
+		font-weight: 500;
+		font-size: rem(20px);
+		margin-bottom: rem(12px);
+	}
+	&__links {
+		margin-bottom: rem(10px);
+	}
+	&__link {
+		display: block;
+		color: $black;
+		text-decoration: none;
+		font-weight: 300;
+		line-height: 1.5;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&__discript {
+		color: #C39367;
+		font-weight: 300;
 	}
 }
 
@@ -142,6 +333,57 @@
 	span {
 
 	}
+}
+
+.tabs {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #D1D9DD;
+	&__tabs {
+		font-weight: 300;
+		line-height: rem(19px);
+		display: flex;
+		justify-content: space-between;
+	}
+	&__nav {
+		display: flex;
+		align-items: center;
+	}
+	&__sep {
+		width: 1px;
+		height: 28px;
+		background-color: #D1D9DD;
+		display: block;
+	}
+	&__link {
+		text-decoration: none;
+		color: $black;
+		font-weight: 300;
+		line-height: rem(58px);
+		position: relative;
+		padding-left: rem(20px);
+		padding-right: rem(20px);
+		// &:first-child {
+		// 	padding-left: 0px;
+		// }
+		&:hover {
+			opacity: 0.6;
+		}
+		&--active {
+			font-weight: 500;
+			pointer-event: none;
+			&:after {
+				position: absolute;
+				top: 100%;
+				height: 1px;
+				content: '';
+				left: 0px;
+				right: 0px;
+				background-color: $red;
+			}
+		}
+	}
+
 }
 
 .body {

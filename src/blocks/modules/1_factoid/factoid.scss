@@ -6,7 +6,8 @@
 	padding-top: rem(130px);
 	padding-bottom: rem(130px);
 	&__container {
-
+		background-repeat: no-repeat;
+		background-position: 45% 24%;
 	}
 	&__columns {
 		display: flex;
@@ -27,5 +28,48 @@
 		height: 476px;
 		border-radius: 500px;
 		overflow: hidden;
+	}
+	&__number {
+		margin-bottom: rem(9px);
+		font-weight: bold;
+		font-size: rem(120px);
+		line-height: rem(141px);
+	}
+	&__discript {
+		font-weight: normal;
+		font-size: rem(30px);
+		line-height: rem(35px);
+		margin-bottom: rem(33px);
+	}
+	&__btn {
+		width: 230px;
+	}
+}
+
+.body {
+	&--light {
+		.factoid {
+			background-color: #F7f9FA;
+			color: $black;
+			&__number {
+				color: $red;
+			}
+			&__container {
+				background-image: url('../img/factoid-decor.svg');
+			}
+		}
+	}
+	&--dark {
+		.factoid {
+			background-color: $black;
+			color: $light;
+			background-image: none !important;
+			&__container {
+				background: none;
+			}
+			&__number {
+				color: $light;
+			}
+		}
 	}
 }
