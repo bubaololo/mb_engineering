@@ -1,0 +1,38 @@
+.form-section {
+
+}
+
+.form {
+	padding: rem(70px) rem(96px);
+	border: 2px solid #D1D9DD;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-image: url('../img/form-bg.svg');
+	background-repeat: no-repeat;
+	background-position: calc(100% - 60px) 30px;
+	&__radios {
+		margin-bottom: rem(28px);
+		display: flex;
+	}
+	&__radio {
+		margin-right: rem(60px);
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	&__fields {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: rem(30px);
+		flex-wrap: wrap;
+	}
+	&__control {
+		display: flex;
+		align-items: center;
+	}
+	&__btn {
+		width: rem(200px);
+		flex-shrink: 0;
+		margin-right: rem(50px);
+	}
+}
