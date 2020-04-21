@@ -33,3 +33,23 @@ html {
 
 	}
 }
+
+.section {
+	&:last-child {
+		margin-bottom: 0px;
+	}
+	&--padding {
+		padding-top: rem(60px);
+		padding-bottom: rem(60px);
+	}
+	&--dark {
+		background-color: #F7F9FA;
+		padding-top: rem(95px);
+		padding-bottom: rem(95px);
+		margin-bottom: rem(95px);
+	}
+}
+
+.block-text {
+	margin-bottom: rem(95px);
+}

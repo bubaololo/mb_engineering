@@ -1,8 +1,43 @@
 .text {
+	h3 {
+		margin-bottom: rem(60px);
+		font-weight: 500;
+		font-size: rem(36px);
+		line-height: rem(42px);
+	}
+	h4 {
+		font-weight: 500;
+		font-size: rem(24px);
+		margin-bottom: rem(35px);
+	}
 	p {
 		margin-bottom: 1rem;
 	}
 	strong {
+		font-weight: bold;
 		color: #C39367;
+	}
+	ul {
+		margin-bottom: 2rem;
+	}
+	li {
+		position: relative;
+		padding-left: rem(32px);
+		margin-bottom: 1rem;
+		&:before {
+			width: 17px;
+			height: 1px;
+			background-color: $accent;
+			display: block;
+			position: absolute;
+			left: 0px;
+			content: "";
+			top: 0.5rem;
+		}
+	}
+	.btn {
+		padding-left: rem(20px);
+		padding-right: rem(20px);
+		margin-bottom: 1rem;
 	}
 }

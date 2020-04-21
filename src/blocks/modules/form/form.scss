@@ -10,6 +10,7 @@
 	background-image: url('../img/form-bg.svg');
 	background-repeat: no-repeat;
 	background-position: calc(100% - 60px) 30px;
+	background-color: $light;
 	&__radios {
 		margin-bottom: rem(28px);
 		display: flex;
