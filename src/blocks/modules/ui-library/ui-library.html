@@ -22,13 +22,13 @@
 
 		<!-- Заголовки -->
 		<h2 class="title title--line ui__title">
-			<span>Заголовок страницы слева</span>
+			<span class="title__text">Заголовок страницы слева</span>
 			<a href="" class="btn btn--60 title__btn">
-				Кнопка
+				<span>Кнопка</span>
 			</a>
 		</h2>
 		<h2 class="title title--center ui__title">
-			<span>Заголовок страницы по центру</span>
+			<span class="title__text">Заголовок страницы по центру</span>
 		</h2>
 
 		<div class="hr"></div>
@@ -58,8 +58,11 @@
 					</span>
 				</a>
 			</div>
-			<div class="ill-card__thumb">
-				<img src="http://placehold.it/900x200" alt="Горизонтальная картинка">
+			<div class="image ill-card__thumb">
+				<img class="image__pict image__pict--contain" src="http://placehold.it/900x200" alt="Декоративная картинка">
+				<figcaption class="image__discript" aria-hidden="true">
+					Декоративная картинка
+				</figcaption>
 			</div>
 		</article>
 
@@ -88,8 +91,11 @@
 					</span>
 				</a>
 			</div>
-			<div class="ill-card__thumb">
-				<img src="http://placehold.it/200x300" alt="Вертикальная картинка">
+			<div class="image ill-card__thumb">
+				<img class="image__pict image__pict--contain" src="http://placehold.it/200x900" alt="Декоративная картинка">
+				<figcaption class="image__discript" aria-hidden="true">
+					Декоративная картинка
+				</figcaption>
 			</div>
 		</article>
 
@@ -331,114 +337,121 @@
 
 		<!-- News -->
 
-		<div class="front-news__articles">
-			<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__tags">
-						<div class="article__tag">
-							<svg class="icon-svg">
-								<use xlink:href="img/sprites/sprite.svg#hot"></use>
-							</svg>
+		<div class="articles">
+			<div class="articles__content">
+				<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__tags">
+							<div class="article__tag">
+								Имя тега
+							</div>
+							<div class="article__tag article__tag">
+								<svg class="icon-svg">
+									<use xlink:href="img/sprites/sprite.svg#hot"></use>
+								</svg>
+							</div>
 						</div>
-						<div class="article__tag">
-							<svg class="icon-svg">
-								<use xlink:href="img/sprites/sprite.svg#hot"></use>
-							</svg>
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
 						</div>
+						<h3 class="article__title">
+							Бизнес-миссия в Индию
+						</h3>
+						<!-- Обрежь по количеству символов, чтобы на 4-5 строк в узкой новости -->
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
+
+				</a>
+				<a href="" class="hide-bg article article--8" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
+						</div>
+						<h3 class="article__title">
+							Открыт прием заявок на конкурс РФРИТ среди проектов в сфере IT
+						</h3>
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<h3 class="article__title">
-						Бизнес-миссия в Индию
-					</h3>
-					<!-- Обрежь по количеству символов, чтобы на 4-5 строк в узкой новости -->
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-				
-			</a>
-			<a href="" class="hide-bg article article--8" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
+
+				</a>
+				<a href="" class="hide-bg article article--8" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
+						</div>
+						<h3 class="article__title">
+							«МетролЭкспо-2020»
+						</h3>
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<h3 class="article__title">
-						Открыт прием заявок на конкурс РФРИТ среди проектов в сфере IT
-					</h3>
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-				
-			</a>
-			<a href="" class="hide-bg article article--8" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
+
+				</a>
+				<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
+						</div>
+						<h3 class="article__title">
+							Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
+						</h3>
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<h3 class="article__title">
-						«МетролЭкспо-2020»
-					</h3>
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-				
-			</a>
-			<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
+				</a>
+				<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
+						</div>
+						<h3 class="article__title">
+							Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
+						</h3>
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<h3 class="article__title">
-						Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
-					</h3>
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-			</a>
-			<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
+				</a>
+				<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
+						</div>
+						<h3 class="article__title">
+							Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
+						</h3>
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<h3 class="article__title">
-						Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
-					</h3>
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-			</a>
-			<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
+				</a>
+				<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
+					<div class="article__content">
+						<div class="article__control">
+							<time>09:12</time> | <time>17 февраля</time>
+						</div>
+						<h3 class="article__title">
+							Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
+						</h3>
+						<p class="article__text">
+							Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
+						</p>
 					</div>
-					<h3 class="article__title">
-						Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
-					</h3>
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-			</a>
-			<a href="" class="hide-bg article article--4" style="background-image: url('http://placehold.it/1200x900');">
-				<div class="article__content">
-					<div class="article__control">
-						<time>09:12</time> | <time>17 февраля</time>
-					</div>
-					<h3 class="article__title">
-						Калининградцев приглашают принять участие в выборе талисмана Всероссийской переписи – 2020
-					</h3>
-					<p class="article__text">
-						Центра поддержки экспорта Калининградской области приглашает принять участие в центре поддержки экспорта Калининградской области приглашает принять участие в
-					</p>
-				</div>
-			</a>
+				</a>
+			</div>
+			<div class="article__control">
+				<a href="" class="btn btn--60 articles__btn">
+					<span>
+						Все новости
+					</span>
+				</a>
+			</div>
 		</div>
 
 		<div class="hr"></div>

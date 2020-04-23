@@ -1,6 +1,11 @@
 .text {
+	h1, h2, h3, h4, h5, h6 {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
 	h3 {
-		margin-bottom: rem(60px);
+		// margin-bottom: rem(60px);
+		
 		font-weight: 500;
 		font-size: rem(36px);
 		line-height: rem(42px);
@@ -8,22 +13,27 @@
 	h4 {
 		font-weight: 500;
 		font-size: rem(24px);
-		margin-bottom: rem(35px);
+		// margin-bottom: rem(35px);
+	}
+	h6 {
+		font-weight: 400;
+		padding-bottom: 1em;
+		padding-top: 1em;
 	}
 	p {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5em;
 	}
 	strong {
 		font-weight: bold;
 		color: #C39367;
 	}
 	ul {
-		margin-bottom: 2rem;
+		margin-bottom: 1.5em;
 	}
 	li {
 		position: relative;
 		padding-left: rem(32px);
-		margin-bottom: 1rem;
+		margin-bottom: 1em;
 		&:before {
 			width: 17px;
 			height: 1px;
@@ -32,12 +42,46 @@
 			position: absolute;
 			left: 0px;
 			content: "";
-			top: 0.5rem;
+			top: 0.5em;
+		}
+	}
+	a {
+		color: $black;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
 		}
 	}
 	.btn {
 		padding-left: rem(20px);
 		padding-right: rem(20px);
+		margin-bottom: 1.5rem;
+	}
+}
+
+.table {
+	margin-bottom: rem(50px);
+	&--accent {
+		th {
+			background-color: $red;
+			color: $light;
+		}
+	}
+	&__discript {
+		font-size: 14px;
+	}
+	table {
+		width: 100%;
+		text-align: left;
+		border-collapse: collapse;
 		margin-bottom: 1rem;
+	}
+	td {
+		font-size: rem(14px);
+		background-color: #F7F9FA;
+	}
+	th, td {
+		padding: rem(26px) rem(20px);
+		border: 2px solid $light;
 	}
 }

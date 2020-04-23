@@ -59,15 +59,23 @@
 	}
 	&__tag {
 		background-color: $red;
-		width: 36px;
 		height: 36px;
 		border-radius: 100px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		font-size: rem(14px);
+		font-weight: 500;
+		padding-left: 20px;
+		padding-right: 20px;
 		svg {
 			width: 20px;
 			height: 20px;
+		}
+		&--hot {
+			padding-left: 0px;
+			padding-right: 0px;
+			width: 36px;
 		}
 	}
 }
