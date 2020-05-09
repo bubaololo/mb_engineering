@@ -97,6 +97,37 @@ function ready() {
 
 	})();
 
+	// Переключение табов контента
 
+	(function toggleContentTabs() {
+		const units = document.querySelectorAll('.units');
+
+		if (units) {
+
+			for (let n = 0; n < units.length; n++) {
+				let tabs = units[n].querySelectorAll('.tabs__link');
+				let blocks = units[n].querySelectorAll('.units__block');
+
+				for(let z = 0; z < tabs.length; z++) {
+					tabs[z].addEventListener('click', function (e){
+						e.preventDefault();
+						console.log(z);
+						select(tabs, blocks, z);
+					});
+				}
+				
+			}
+		}
+
+	})();
+
+	function select (tabs, blocks, n) {
+		for (let m = 0; m < tabs.length; m++) {
+			tabs[m].classList.remove('tabs__link--active');
+			blocks[m].classList.remove('units__block--active');
+		}
+		tabs[n].classList.add('tabs__link--active');
+		blocks[n].classList.add('units__block--active');
+	}
 }
 

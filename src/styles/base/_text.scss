@@ -13,7 +13,10 @@
 	h4 {
 		font-weight: 500;
 		font-size: rem(24px);
-		// margin-bottom: rem(35px);
+	}
+	h5 {
+		font-weight: 500;
+		font-size: rem(18px);
 	}
 	h6 {
 		font-weight: 400;
@@ -51,6 +54,10 @@
 		&:hover {
 			text-decoration: none;
 		}
+	}
+	img {
+		display: block;
+		margin-bottom: 1rem;
 	}
 	.btn {
 		padding-left: rem(20px);

@@ -16,6 +16,10 @@
 
 .block-text {
 	margin-bottom: rem(50px);
+	&--dark {
+		background-color: #F7F9FA;
+		padding: rem(60px) rem(52px);
+	}
 }
 
 // Flex-родитель с переносом
@@ -44,6 +48,7 @@
 	&__link {
 		text-decoration: none;
 		color: $black;
+		white-space: nowrap;
 		&:hover {
 			opacity: 0.7;
 		}
@@ -51,9 +56,12 @@
 			color: #738D9A;
 			font-weight: 300;
 			pointer-events: none;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 	}
 	&__arrow {
+		flex-shrink: 0;
 		display: block;
 		height: rem(8px);
 		width: rem(8px);
@@ -90,7 +98,8 @@
 	&__text {
 		font-size: rem(48px);
 		line-height: rem(56px);
-		margin-right: rem(40px);
+		// Это вообще откуда взялось??
+		// margin-right: rem(40px);
 	}
 }
 
@@ -118,6 +127,11 @@
 	background-size: cover;
 	background-position: center;
 	margin-bottom: rem(60px);
+	&--light {
+		.title-card__wrapper {
+			background: linear-gradient(90deg, #ffffff 62%, rgba(255, 255, 255, 0) 100%);
+		}
+	}
 	&__wrapper {
 		min-height: rem(360px);
 		background: linear-gradient(90deg, #F7F9FA 62%, rgba(255, 255, 255, 0) 100%);
@@ -205,6 +219,65 @@
 	}
 }
 
+.link-blocks {
+	margin-bottom: rem(50px);
+}
+
+.link-block {
+	margin-bottom: rem(20px);
+	background: #FFFFFF;
+	border: 1px solid #D1D9DD;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: rem(20px) rem(55px) rem(20px) rem(30px);
+	display: block;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-image: url('../img/dots-bg.svg');
+	background-size: 306px auto;
+	background-repeat: no-repeat;
+	background-position: right;
+	color: $black;
+	text-decoration: none;
+	&:hover {
+		opacity: 0.7;
+	}
+	&__thumb {
+		display: block;
+		width: 34px;
+		height: 34px;
+		flex-shrink: 0;
+		margin-right: 18px;
+		flex-shrink: 0;
+		svg {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	&__title {
+		font-size: rem(18px);
+		flex-shrink: 0;
+		flex-grow: 1;
+	}
+	&__btn {
+		flex-shrink: 0;
+		padding-left: rem(60px);
+		padding-right: rem(60px);
+	}
+}
+
+.text-card {
+	background-color: $light;
+	margin-bottom: 2rem;
+	padding: rem(30px) rem(40px) rem(40px) rem(40px);
+	a {
+		color: $accent;
+	}
+}
+
 .factoids {
 	display: flex;
 	justify-content: space-between;
@@ -221,9 +294,16 @@
 	border-radius: 5px;
 	background-repeat: no-repeat;
 	background-position: calc(100% - 35px) calc(100% - 25px);
-	background-size: 124px auto;
+	background-size: 124px 124px;
+	background-color: $light;
 	&--dark {
 		background-color: #F7F9FA;
+	}
+	&--clear {
+		height: 0px;
+		margin: 0px;
+		visibility: hidden;
+		padding: 0px;
 	}
 	&__icon {
 		width: 45px;
@@ -245,6 +325,75 @@
 	}
 	&__bottom-text {
 		font-weight: 300;
+		margin-bottom: 0.5em;
+	}
+}
+
+.factoid-column {
+	width: calc(50% - 10px);
+	margin-bottom: 20px;
+	position: relative;
+	padding: rem(35px);
+	border-radius: 5px;
+	background-color: $light;
+	height: fit-content;
+	&__title {
+		padding-bottom: rem(22px);
+		font-weight: 500;
+		font-size: rem(24px);
+		position: relative;
+		margin-bottom: rem(35px);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 0px;
+			background-color: $red;
+			height: 4px;
+			width: 100%;
+			max-width: 127px;
+		}
+	}
+	&__hr {
+		margin-bottom: rem(38px);
+	}
+	&__header {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(35px);
+	}
+	&__icon {
+		display: block;
+		height: 34px;
+		width: 34px;
+		flex-shrink: 0px;
+		margin-right: 35px;
+	}
+	&__header-name {
+		font-weight: 500;
+		font-size: 18px;
+	}
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		padding-bottom: rem(30px);
+		margin-bottom: rem(35px);
+		border-bottom: 1px solid #D1D9DD;
+		&:last-child {
+			border: 0px;
+		}
+	}
+	&__item {
+		width: 50%;
+		padding-right: 12px;
+	}
+	&__accent {
+		margin-bottom: rem(10px);
+		font-weight: bold;
+		font-size: 36px;
+	}
+	&__text {
+		margin-bottom: rem(10px);
 	}
 }
 
@@ -305,15 +454,24 @@
 
 .drop-card {
 	margin-bottom: rem(20px);
+	&--accent {
+		.drop-card__header {
+			background-color: $red;
+			color: $light;
+			border: none;
+		}
+	}
 	&__header {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding: rem(40px) rem(50px);
-		background: #F7F9FA;
+		// background: #F7F9FA; откуда это взялось?
 		border: 1px solid #D1D9DD;
 		box-sizing: border-box;
 		border-radius: 5px;
 		cursor: pointer;
+		background-color: $light;
 		&:hover {
 			opacity: 0.7;
 		}
@@ -353,6 +511,7 @@
 	padding: rem(50px);
 	border-radius: 5px;
 	margin-bottom: rem(50px);
+	background-color: $light;
 	&--dark {
 		background-color: #F7F9FA;
 	}
@@ -406,6 +565,80 @@
 				color: $accent;
 			}
 		}
+	}
+}
+
+.adress-card {
+	background: #F7F9FA;
+	border-radius: 5px;
+	padding: 50px;
+	width: calc(33% - 10px);
+	margin-bottom: 20px;
+	font-size: rem(14px);
+	&--clear {
+		margin-bottom: 0px;
+		height: 0px;
+		overflow: hidden;
+		padding: 0px;
+	}
+	&__title {
+		color: $accent;
+		margin-bottom: rem(9px);
+	}
+	&__text {
+		margin-bottom: rem(26px);
+	}
+	a {
+		text-decoration: none;
+		color: $black;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.circle-cards {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.circle-card {
+	text-align: center;
+	margin-bottom: rem(60px);
+	width: 33%;
+	padding-left: rem(20px);
+	padding-right: rem(20px);
+	&--clear {
+		height: 0px;
+		margin-bottom: 0px;
+		visibility: hidden;
+	}
+	&__icon {
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: rem(28px);
+	}
+	&__discript {
+		font-weight: 300;
+		font-size: rem(14px);
+		margin-bottom: 0.4em;
+	}
+	&__text {
+		font-weight: 500;
+		line-height: 1.5;
+	}
+}
+
+.icon-card {
+	width: calc(50% - 10px);
+	margin-bottom: 20px;
+	margin-bottom: rem(36px);
+	&__icon {
+		display: block;
+		height: 36px;
+		width: 36px;
+		display: block;
+		margin-bottom: rem(15px);
 	}
 }
 
@@ -524,9 +757,11 @@
 		
 	}
 	&--doc {
-		color: $black;
 		border: 1px solid $red;
-		background-color: #FCF1EF;;
+		background-color: #FCF1EF;
+		span {
+			color: $black;
+		}
 	}
 	&--disabled {
 		opacity: 0.7;
@@ -555,21 +790,28 @@
 	&__nav {
 		display: flex;
 		align-items: center;
+		overflow-x: scroll;
+		overflow-y: hidden;
 	}
 	&__sep {
 		width: 1px;
 		height: 28px;
 		background-color: #D1D9DD;
 		display: block;
+		flex-shrink: 0;
 	}
 	&__link {
 		text-decoration: none;
 		color: $black;
 		font-weight: 300;
-		line-height: rem(58px);
+		// line-height: rem(58px);
 		position: relative;
 		padding-left: rem(20px);
 		padding-right: rem(20px);
+		flex-shrink: 0;
+		max-width: 420px;
+		padding-top: rem(16px);
+		padding-bottom: rem(16px);
 		// &:first-child {
 		// 	padding-left: 0px;
 		// }
@@ -628,6 +870,37 @@
 	background-color: #D1D9DD;
 	height: 1px;
 	display: block;
+}
+
+.time {
+	margin-bottom: rem(40px);
+	display: inline-block;
+	font-weight: 400;
+}
+
+.share {
+	margin-bottom: 2rem;
+	&__title {
+		margin-bottom: 0.5em;
+		font-weight: 400;
+	}
+}
+
+.units {
+	border: 1px solid red;
+	&__header {
+
+	}
+	&__main {
+		padding-top: rem(60px);
+		// padding-bottom: rem(60px);
+	}
+	&__block {
+		display: none;
+		&--active {
+			display: block;
+		}
+	}
 }
 
 .body {
