@@ -13,6 +13,7 @@ $howManySteps: 100; //this needs to be even.
 	width: $size;
 	height: $size;
 	line-height: $size;
+	flex-shrink: 0;
 	// background: none;
 	// margin: 0 auto;
 	// box-shadow: none;
@@ -85,6 +86,10 @@ $howManySteps: 100; //this needs to be even.
 			object-fit: contain;
 			margin: 0px;
 		}
+	}
+	.progress-text {
+		font-weight: 500;
+		line-height: 1.2;
 	}
 }
 
