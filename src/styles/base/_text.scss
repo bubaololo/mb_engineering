@@ -91,6 +91,30 @@
 	}
 }
 
+.columns {
+	display: flex;
+	flex-wrap: wrap;
+	padding-right: 20px;
+	width: 100%;
+	margin-bottom: rem(50px);
+	&__col {
+		padding-right: 20px;
+		&--12 {
+			width: 100%;
+		}
+		&--6 {
+			width: 50%;
+		}
+		&--4 {
+			width: calc(100% / 3);
+		}
+		&--3 {
+			width: 25%;
+		}
+
+	}
+}
+
 .table {
 	margin-bottom: rem(50px);
 	&__discript {

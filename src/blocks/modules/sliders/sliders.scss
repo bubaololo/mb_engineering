@@ -11,6 +11,7 @@
 		width: calc(100% / 12 * 5);
 		flex-shrink: 0;
 		height: 810px;
+		position: relative;
 	}
 	&__content {
 		flex-grow: 1;
@@ -61,6 +62,21 @@
 		bottom: 0px;
 		z-index: 2;
 		right: 78px;
+	}
+	&__ill-footer {
+		position: absolute;
+		padding: 40px;
+		bottom: 0px;
+		right: 0px;
+		background-color: rgba(247, 249, 250, 0.9);
+		height: 138px;
+		display: flex;
+		align-items: center;
+		font-size: rem(14px);
+	}
+	&__ill-card {
+		padding-left: 24px;
+		padding-right: 24px;
 	}
 	&__footer {
 		height: 138px;

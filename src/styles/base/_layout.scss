@@ -13,6 +13,11 @@ html {
 	&__content {
 		padding-top: rem(58px);
 		padding-bottom: rem(100px);
+		&--none {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			
+		}
 	}
 }
 

@@ -1,4 +1,5 @@
 .header {
+	position: relative;
 	&__topline {
 		background-color: $gray;
 		color: $light;
@@ -133,5 +134,62 @@
 				color: $light;
 			}
 		}
+	}
+}
+
+.drop-nav {
+	position: absolute;
+	top: 100%;
+	background-color: $light;
+	width: 100%;
+	left: 0px;
+	right: 0px;
+	box-shadow: 20px 50px 50px rgba(29, 85, 103, 0.1);
+	max-height: 0px;
+	opacity: 0;
+	transition: 0.3s all;
+	&--open {
+		max-height: 500px;
+		opacity: 1;
+	}
+	&__container {
+		padding-top: rem(55px);
+		padding-bottom: rem(55px);
+	}
+	&__columns {
+		display: flex;
+	}
+	&__column {
+		width: calc(100% / 3);
+		padding-right: 20px;
+	}
+	&__link {
+		display: flex;
+		margin-bottom: 1.2rem;
+		align-items: center;
+		color: $black;
+		text-decoration: none;
+		font-weight: normal;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&__thumb {
+		height: rem(24px);
+		width: rem(24px);
+		display: flex;
+		margin-right: rem(30px);
+		align-items: center;
+		svg {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
+	&__discript {
+		font-size: rem(14px);
+		margin-bottom: 0.5rem;
+		color: #738D9A;
+		padding-left: 54px;
 	}
 }

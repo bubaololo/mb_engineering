@@ -9,3 +9,46 @@
 	}
 	
 }
+
+.calendar {
+	.fc-left {
+		display: flex;
+		align-items: center;
+		h2 {
+			font-size: rem(16px);
+		}
+	}
+	.fc-button {
+		border-radius: 5px;
+		background-color: $red;
+		border: none;
+		font-size: rem(16px);
+	}
+	.fc-day-header {
+		background-color: $red;
+		color: $light;
+		text-align: left;
+		text-transform: capitalize;
+		padding: 10px;
+		font-weight: normal;
+	}
+	.fc-past, .fc-today, .fc-future {
+		padding: 10px;
+	}
+	.fc-day-number {
+		font-weight: normal;
+	}
+	.fc-other-month {
+		opacity: 0.6;
+		background-color: #F7F9FA;
+	}
+	.fc-day-grid-event {
+		border: none;
+		background-color: $red;
+		.fc-content {
+			background-color: $red;
+			font-weight: normal;
+			border: none;
+		}
+	}
+}

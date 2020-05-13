@@ -1,6 +1,7 @@
 import { Calendar } from '@fullcalendar/core';
+import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import esLocale from '@fullcalendar/core/locales/ru';
+import ruLocale from '@fullcalendar/core/locales/ru';
 
 document.addEventListener("DOMContentLoaded", ready);
 
@@ -13,14 +14,22 @@ function ready() {
 		if (calendarArrow) {
 			for(let i = 0; i < calendarArrow.length; i++) {
 				let calendar = new Calendar(calendarArrow[i], {
-					plugins: [ dayGridPlugin ],
-					locale: 'ru',
+					plugins: [ dayGridPlugin, listPlugin ],
+					// defaultView: 'listWeek', // это скрыть
+					locale: ruLocale,
 					weekNumberCalculation: 'ISO',
 					header: {
 						left:   'prev, title, next',
 						center: '',
 						right:  'today'
+					},
+					events: [
+					{
+						title: '12.00 Тренинг корпорации МСП «Генерация бизнес-идеи» Светлогорск',
+						start: '2020-05-25',
+						end: '2020-06-02'
 					}
+					]
 				});
 
 				calendar.render();
@@ -119,15 +128,39 @@ function ready() {
 			}
 		}
 
+		function select (tabs, blocks, n) {
+			for (let m = 0; m < tabs.length; m++) {
+				tabs[m].classList.remove('tabs__link--active');
+				blocks[m].classList.remove('units__block--active');
+			}
+			tabs[n].classList.add('tabs__link--active');
+			blocks[n].classList.add('units__block--active');
+		}
+
 	})();
 
-	function select (tabs, blocks, n) {
-		for (let m = 0; m < tabs.length; m++) {
-			tabs[m].classList.remove('tabs__link--active');
-			blocks[m].classList.remove('units__block--active');
+	// Переключение вида списка книг
+
+	(function toogleBookList() {
+		const btnList = document.querySelector('.tab-btns__btn--list');
+		const btnCards = document.querySelector('.tab-btns__btn--cards');
+		const list = document.querySelector('.books');
+
+		if (btnList && btnCards && list) {
+			btnList.addEventListener('click', function(e) {
+				btnCards.classList.remove('tab-btns__btn--active');
+				this.classList.add('tab-btns__btn--active');
+				e.preventDefault();
+				list.classList.remove('books--cards');
+			});
+
+			btnCards.addEventListener('click', function(e) {
+				btnList.classList.remove('tab-btns__btn--active');
+				this.classList.add('tab-btns__btn--active');
+				e.preventDefault();
+				list.classList.add('books--cards');
+			})
 		}
-		tabs[n].classList.add('tabs__link--active');
-		blocks[n].classList.add('units__block--active');
-	}
+	})();
 }
 
