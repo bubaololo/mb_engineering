@@ -2,3 +2,30 @@
 	padding-top: rem(10px);
 	padding-bottom: rem(10px);
 }
+
+.hide-bg {
+	&--active {
+		background-image: none !important;
+	}
+}
+
+.hide-image {
+	&--active {
+		visibility: hidden !important;
+	}
+}
+
+.none-image {
+	&--active {
+		display: none !important;
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
+}

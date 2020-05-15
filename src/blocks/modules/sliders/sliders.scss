@@ -12,6 +12,12 @@
 		flex-shrink: 0;
 		height: 810px;
 		position: relative;
+		@include r(1200) {
+			display: none;
+		}
+		@include r(750) {
+
+		}
 	}
 	&__content {
 		flex-grow: 1;
@@ -22,6 +28,14 @@
 		position: relative;
 		background-color: $light;
 		padding: rem(104px) rem(150px) 0 rem(44px);
+		@include r(1200) {
+			
+		}
+		@include r(750) {
+			padding-right: rem(70px);
+			padding-left: rem(25px);
+			padding-top: rem(50px);
+		}
 	}
 	&__top-discript {
 		font-size: rem(14px);
@@ -62,6 +76,14 @@
 		bottom: 0px;
 		z-index: 2;
 		right: 78px;
+		@include r(1200) {
+			right: 50px;
+		}
+		@include r(650) {
+			left: 50%;
+			transform: translateX(-50%);
+			justify-content: center;
+		}
 	}
 	&__ill-footer {
 		position: absolute;
@@ -85,11 +107,33 @@
 		flex-direction: column;
 		justify-content: center;
 		font-size: rem(14px);
+		@include r(1200) {
+			margin-top: 20px;
+			height: 100px;
+		}
+		@include r(750) {
+
+		}
+		@include r(600) {
+			margin-top: 40px;
+		}
 		&-top {
 			margin-bottom: 17px;
+			@include r(1200) {
+				display: none;
+			}
+			@include r(750) {
+
+			}
 		}
 		&-bottom {
 			font-weight: normal;
+			@include r(1200) {
+				display: none;
+			}
+			@include r(750) {
+
+			}
 		}
 	}
 	&__fraction {
@@ -134,6 +178,14 @@
 		cursor: pointer;
 		text-decoration: none;
 		background-color: #F7F9FA;
+		flex-shrink: 0;
+		@include r(1200) {
+			height: 100px;
+			width: 56px;
+		}
+		@include r(750) {
+
+		}
 		svg {
 			height: 1.4rem;
 			width: 1.4rem;
@@ -156,6 +208,15 @@
 	}
 }
 
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
+}
+
 .slider-page {
 	margin-bottom: rem(95px);
 	&__slide {
@@ -169,12 +230,19 @@
 		width: calc(100% / 12 * 5);
 		flex-shrink: 0;
 		height: 476px;
+		@include r(950) {
+			display: none;
+		}
 	}
 	&__content {
 		flex-grow: 1;
 		min-width: 0px;
 		padding: 50px;
 		position: relative;
+		@include r(1200) {
+			padding: rem(25px);
+			padding-right: rem(55px);
+		}
 	}
 	&__text {
 		margin-bottom: rem(35px);
@@ -183,6 +251,9 @@
 		color: #D1D9DD;
 		font-size: rem(14px);
 		margin-right: rem(50px);
+		@include r(1200) {
+			margin-right: 0px;
+		}
 	}
 	&__control {
 		position: absolute;
@@ -190,6 +261,9 @@
 		bottom: 0px;
 		z-index: 2;
 		left: calc(100% / 12 * 5 + 50px);
+		@include r(950) {
+			display: none;
+		}
 	}
 	&__fraction {
 		width: 53px;
@@ -208,6 +282,9 @@
 		flex-direction: column;
 		font-size: rem(14px);
 		padding: 10px;
+		@include r(950) {
+			width: 48px;
+		}
 	}
 	&__now {
 
@@ -250,6 +327,34 @@
 			pointer-events: none;
 			svg {
 				fill: $black;
+			}
+		}
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		.slider-page {
+			border: 1px solid $light;
+			&__slide {
+				background-color: $black;
+			}
+			&__fraction {
+				background-color: $black;
+				border: 1px solid $light;
+			}
+			&__btn {
+				background-color: $black;
+				border: 1px solid $light;
+				&--disabled {
+					opacity: 0.5;
+					svg {
+						fill: $accent;
+					}
+				}
 			}
 		}
 	}

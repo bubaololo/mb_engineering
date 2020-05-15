@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 
 (function () {
 	const mySwiper = new Swiper ('.slider-front__container', {
-		effect: 'fade',
+		// effect: 'fade',
 		pagination: {
 			el: '.slider-front__fraction',
 			type: 'fraction',
@@ -22,7 +22,7 @@ import Swiper from 'swiper';
 
 (function () {
 	const mySwiper = new Swiper ('.slider-page__container', {
-		effect: 'fade',
+		// effect: 'fade',
 		pagination: {
 			el: '.slider-page__fraction',
 			type: 'fraction',

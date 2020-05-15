@@ -1,5 +1,6 @@
 .partners {
 	padding-top: rem(45px);
+	padding-bottom: rem(50px);
 	&__title {
 		margin-bottom: rem(60px);
 	}
@@ -13,9 +14,26 @@
 		height: 142px;
 		padding: 10px;
 		margin-bottom: 20px;
+		@include r(1200) {
+
+		}
+		@include r(750) {
+			width: calc(50% - 10px);
+		}
+		@include r(450) {
+			width: 100%;
+		}
 		&--clear {
 			height: 0px;
 			overflow: hidden;
+			padding: 0px;
+			margin: 0px;
+			@include r(750) {
+				width: calc(50% - 10px);
+			}
+			@include r(450) {
+				width: 100%;
+			}
 		}
 	}
 }

@@ -2,4 +2,20 @@
 	background-color: #F7F9FA;
 	padding-top: rem(95px);
 	padding-bottom: rem(95px);
+	@include r(1200) {
+		padding-top: rem(55px);
+		padding-bottom: rem(55px);
+	}
+	@include r(750) {
+		
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
 }

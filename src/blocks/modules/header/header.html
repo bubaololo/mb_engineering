@@ -3,23 +3,23 @@
 		<div class="container header__topline-container">
 			<div class="header__topline-left">
 				<a href="" class="header__link open-panel">
-					<svg class="icon-svg">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#eye"></use>
 					</svg>
 					<span>
 						Режим для слабовидящих
 					</span>
 				</a>
-				<a href="tel:+74012994588" class="header__link">
-					<svg class="icon-svg">
+				<a href="tel:+74012994588" class="header__link mobile-hide">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#call"></use>
 					</svg>
 					<span>
 						+7 (4012) 994 588
 					</span>
 				</a>
-				<a href="mailto:info@mbkaliningrad.ru" class="header__link">
-					<svg class="icon-svg">
+				<a href="mailto:info@mbkaliningrad.ru" class="header__link mobile-hide">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#mail"></use>
 					</svg>
 					<span>
@@ -28,7 +28,7 @@
 				</a>
 			</div>
 			<div class="header__topline-right">
-				<form action="" class="search header__search">
+				<form action="" class="search header__search mobile-hide">
 					<input type="text" class="search__input" placeholder="Поиск по сайту">
 					<button class="search__btn">
 						<svg class="icon-svg">
@@ -54,7 +54,7 @@
 			<a class="header__logo" href="/">
 				<img src="img/logo.svg"  alt="Логотип фирмы">
 			</a>
-			<nav class="header__menu">
+			<nav class="header__menu mobile-hide">
 				<a href="/" class="header__menu-link header__menu-link--active">
 					Главная
 				</a>
@@ -68,20 +68,25 @@
 					Новости
 				</a>
 			</nav>
-			<a href="" class="btn btn--50 header__btn" id="header__btn-1">
-				<svg class="icon-svg">
+			<a href="" class="btn btn--50 header__btn mobile-hide" id="header__btn-1">
+				<svg class="icon-svg none-image">
 					<use xlink:href="img/sprites/sprite.svg#break-menu"></use>
 				</svg>
 				<span>Меры поддержки</span>
 			</a>
-			<a href="" class="btn btn--50 header__btn" id="header__btn-2">
-				<svg class="icon-svg">
+			<a href="" class="btn btn--50 header__btn mobile-hide" id="header__btn-2">
+				<svg class="icon-svg none-image">
 					<use xlink:href="img/sprites/sprite.svg#lattice"></use>
 				</svg>
 				<span>Полезное</span>
 			</a>
-			<a href="" class="btn btn--50 btn--gray-light header__btn">
+			<a href="" class="btn btn--50 btn--gray-light header__btn mobile-hide">
 				<span>Личный кабинет</span>
+			</a>
+			<a href="#mmenu" class="header__mob-menu">
+				<svg class="icon-svg">
+					<use xlink:href="img/sprites/sprite.svg#menu"></use>
+				</svg>
 			</a>
 		</div>
 	</div>
@@ -90,18 +95,17 @@
 			<div class="drop-nav__columns">
 				<div class="drop-nav__column">
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-1"></use>
 							</svg>
-
 						</div>
 						<p class="drop-nav__text">
 							Микрокредитование
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-2"></use>
 							</svg>
@@ -112,7 +116,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-3"></use>
 							</svg>
@@ -123,7 +127,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-4"></use>
 							</svg>
@@ -136,7 +140,7 @@
 				</div>
 				<div class="drop-nav__column">
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-5"></use>
 							</svg>
@@ -147,7 +151,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-6"></use>
 							</svg>
@@ -158,7 +162,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-7"></use>
 							</svg>
@@ -169,7 +173,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-8"></use>
 							</svg>
@@ -182,7 +186,7 @@
 				</div>
 				<div class="drop-nav__column">
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-9"></use>
 							</svg>
@@ -193,7 +197,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-10"></use>
 							</svg>
@@ -204,7 +208,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-11"></use>
 							</svg>
@@ -223,7 +227,7 @@
 			<div class="drop-nav__columns">
 				<div class="drop-nav__column">
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-12"></use>
 							</svg>
@@ -237,7 +241,7 @@
 						Онлайн курсы
 					</p>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-13"></use>
 							</svg>
@@ -248,7 +252,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-14"></use>
 							</svg>
@@ -259,7 +263,7 @@
 						</p>
 					</a>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-15"></use>
 							</svg>
@@ -272,7 +276,7 @@
 				</div>
 				<div class="drop-nav__column">
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-16"></use>
 							</svg>
@@ -286,7 +290,7 @@
 						Спецпроекты
 					</p>
 					<a href="" class="drop-nav__link" tabindex="0">
-						<div class="drop-nav__thumb">
+						<div class="drop-nav__thumb none-image">
 							<svg class="icon-svg">
 								<use xlink:href="img/sprites/sprite.svg#menu-17"></use>
 							</svg>

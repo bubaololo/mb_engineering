@@ -50,6 +50,15 @@
 	}
 }
 
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
+}
+
 .input {
 	margin-bottom: rem(28px);
 	display: block;
@@ -98,6 +107,15 @@
 		&:focus {
 			border-color: $accent;
 		}
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
 	}
 }
 
@@ -150,5 +168,14 @@
 			height: rem(20px);
 			width: rem(20px);
 		}
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
 	}
 }

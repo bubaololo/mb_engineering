@@ -1,5 +1,5 @@
 <section class="map">
-	<div class="map__wrap">
+	<div class="map__wrap" id="map__wrap">
 		
 	</div>
 	<div class="container map__container">
@@ -9,7 +9,7 @@
 			</h2>
 			<div class="map__line">
 				<div class="map__line-icon">
-					<svg class="icon-svg">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#c-marker"></use>
 					</svg>
 				</div>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="map__line">
 				<div class="map__line-icon">
-					<svg class="icon-svg">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#c-clock"></use>
 					</svg>
 				</div>
@@ -30,7 +30,7 @@
 			</div>
 			<a href="tel:+74012994588" class="map__line">
 				<div class="map__line-icon">
-					<svg class="icon-svg">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#c-phone"></use>
 					</svg>
 				</div>
@@ -40,7 +40,7 @@
 			</a>
 			<a href="mailto:info@mbkaliningrad.ru" class="map__line">
 				<div class="map__line-icon">
-					<svg class="icon-svg">
+					<svg class="icon-svg none-image">
 						<use xlink:href="img/sprites/sprite.svg#c-mail"></use>
 					</svg>
 				</div>
@@ -50,4 +50,28 @@
 			</a>
 		</div>
 	</div>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+	<script>
+
+		ymaps.ready(init);
+
+		function init() {
+			var myMap = new ymaps.Map("map__wrap", {
+				center: [54.7248611025393,20.503583213717594],
+				zoom: 18
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+
+
+
+			myMap.geoObjects
+			.add(new ymaps.Placemark([54.72485323411223,20.501655621928286], {
+				preset: 'islands#icon',
+				iconColor: 'green',
+				iconCaptionMaxWidth: '50'
+			}));
+		}
+
+	</script>
 </section>

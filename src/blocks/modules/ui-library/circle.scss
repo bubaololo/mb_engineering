@@ -93,6 +93,15 @@ $howManySteps: 100; //this needs to be even.
 	}
 }
 
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
+}
+
 @for $i from 1 through $howManySteps {
 	$stepName: ($i*(100 / $howManySteps));
 

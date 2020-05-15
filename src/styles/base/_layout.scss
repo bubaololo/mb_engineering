@@ -11,8 +11,7 @@ html {
 	flex-direction: column;
 	justify-content: space-between;
 	&__content {
-		padding-top: rem(58px);
-		padding-bottom: rem(100px);
+		padding-bottom: rem(40px);
 		&--none {
 			padding-top: 0px;
 			padding-bottom: 0px;
@@ -21,10 +20,28 @@ html {
 	}
 }
 
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
+}
+
 .content {
 	flex-grow: 1;
 	min-height: 0px;
 	min-width: 0px;
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
+	}
 }
 
 .container {
@@ -39,18 +56,63 @@ html {
 	}
 }
 
-.section {
-	&:last-child {
-		margin-bottom: 0px;
+.body {
+	&--light {
+		
 	}
-	&--padding {
-		padding-top: rem(60px);
+	&--dark {
+		
+	}
+}
+
+.section {
+	padding-top: rem(60px);
+	padding-bottom: rem(80px);
+	@include r(1200) {
+		padding-top: rem(40px);
 		padding-bottom: rem(60px);
 	}
+	// &:last-child {
+	// 	margin-bottom: 0px;
+	// }
 	&--dark {
 		background-color: #F7F9FA;
 		padding-top: rem(95px);
 		padding-bottom: rem(95px);
-		margin-bottom: rem(95px);
+		@include r(1200) {
+			padding-top: rem(70px);
+			padding-bottom: rem(70px);
+		}
+		// margin-bottom: rem(95px);
+	}
+}
+
+.body {
+	&--light {
+
+	}
+	&--dark {
+		.section {
+			border-bottom: 1px solid $light;
+			background-color: $black;
+		}
+	}
+}
+
+.mobile-hide {
+	@include r(1200) {
+		display: none;
+	}
+	@include r(750) {
+
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+		
 	}
 }

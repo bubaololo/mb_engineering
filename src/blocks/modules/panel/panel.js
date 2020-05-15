@@ -3,6 +3,9 @@
 
 	const btn = document.querySelector('#toggle-image');
 	const imageArray = document.querySelectorAll('.image');
+	const imageBgArray = document.querySelectorAll('.hide-bg');
+	const hideImageArray = document.querySelectorAll('.hide-image');
+	const noneImageArray = document.querySelectorAll('.none-image');
 
 	if (btn && imageArray) {
 		btn.addEventListener('click', toggle);
@@ -12,6 +15,19 @@
 		let i;
 		for(i = 0; i < imageArray.length; i++) {
 			imageArray[i].classList.toggle('image--hide');
+		}
+		let n;
+		for(n = 0; n < imageBgArray.length; n++) {
+			imageBgArray[n].classList.toggle('hide-bg--active');
+		}
+		let z;
+		for(z = 0; z < hideImageArray.length; z++) {
+			hideImageArray[z].classList.toggle('hide-image--active');
+		}
+
+		let m;
+		for(m = 0; m < noneImageArray.length; m++) {
+			noneImageArray[m].classList.toggle('none-image--active');
 		}
 	}
 

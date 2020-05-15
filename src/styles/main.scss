@@ -11,3 +11,7 @@
 @import "libs/calendar";
 @import "libs/swiper.min";
 @import "../blocks/modules";
+
+@include r(1200) {
+
+}

@@ -86,15 +86,34 @@
 					</h5>
 					<div class="footer__socials">
 						<a href="" class="footer__social-link">
-							1
+							<svg class="icon-svg none-image">
+								<use xlink:href="img/sprites/sprite.svg#fb"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__social-link">
-							2
+							<svg class="icon-svg none-image">
+								<use xlink:href="img/sprites/sprite.svg#inst"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__social-link">
-							3
+							<svg class="icon-svg none-image">
+								<use xlink:href="img/sprites/sprite.svg#vk"></use>
+							</svg>
 						</a>
 					</div>
+					<form action="" class="search footer__search">
+						<input type="text" class="search__input" placeholder="Поиск по сайту">
+						<button class="search__btn">
+							<svg class="icon-svg">
+								<use xlink:href="img/sprites/sprite.svg#search"></use>
+							</svg>
+						</button>
+					</form>
+					<a href="" class="btn btn--60 footer__btn-profile">
+						<span>
+							Личный кабинет
+						</span>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -104,9 +123,18 @@
 			<p class="footer__subscribe-title">
 				Подпишитесь на новости
 			</p>
-			<input type="text" class="search__input" placeholder="Поиск по сайту">
+			<form action="post" class="subscribe">
+				<input type="text" class="subscribe__field" placeholder="Введите свой e-mail">
+				<button class="btn btn--60 subscribe__btn">
+					<span>
+						Подписаться
+					</span>
+				</button>
+			</form>
 		</div>
 	</div>
+
+	<!-- Блок DEMO полностью удали на проекте -->
 	<div class="demo">
 		<div class="container demo__container">
 			<div class="demo__column">

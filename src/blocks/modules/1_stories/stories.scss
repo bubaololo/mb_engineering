@@ -1,6 +1,9 @@
 .stories {
 	padding-top: rem(100px);
 	padding-bottom: rem(100px);
+	@include r(1200) {
+		display: none;
+	}
 	&__title {
 		margin-bottom: rem(50px);
 	}
