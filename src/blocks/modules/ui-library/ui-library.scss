@@ -25,6 +25,12 @@
 
 .block-text {
 	margin-bottom: rem(50px);
+	&:last-child {
+		margin-bottom: 0;
+	}
+	@include r(1200) {
+		margin-bottom: rem(30px);
+	}
 	&--dark {
 		background-color: #F7F9FA;
 		padding: rem(60px) rem(52px);
@@ -177,6 +183,9 @@
 	display: flex;
 	align-items:center;
 	margin-bottom: rem(50px);
+	@include r(750) {
+		display: none;
+	}
 	&__link {
 		text-decoration: none;
 		color: $black;
@@ -1152,15 +1161,21 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: rem(50px);
 	border-radius: 5px;
 	margin-bottom: rem(50px);
-	background-color: $light;
-	@include r(750) {
-		padding: rem(25px);
+	padding-top: rem(50px);
+	padding-bottom: rem(50px);
+	&--padding {
+		padding: rem(50px);
+		@include r(750) {
+			padding: rem(25px);
+		}
 	}
 	&--dark {
 		background-color: #F7F9FA;
+	}
+	&--light {
+		background-color: $light;
 	}
 	&--invert {
 		.ill-card__thumb {
@@ -2100,6 +2115,12 @@
 		margin-bottom: rem(26px);
 		display: flex;
 		align-items: center;
+		@include r(1200) {
+			align-items: flex-start;
+		}
+		@include r(750) {
+			display: block;
+		}
 	}
 	&__icon {
 		flex-shrink: 0;
@@ -2112,6 +2133,10 @@
 		font-size: 18px;
 		background-image: url('../img/li-bg.svg');
 		margin-right: 33px;
+		@include r(750) {
+			margin-right: 0px;
+			margin-bottom: rem(15px);
+		}
 	}
 	&__text {
 		p {
@@ -2230,6 +2255,9 @@
 				color: $light;
 				border-color: $light;
 				background-color: none;
+			}
+			&--gray-light {
+				background-color: $black;
 			}
 		}
 		.image {

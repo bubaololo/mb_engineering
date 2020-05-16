@@ -21,67 +21,71 @@ function ready() {
 		// 	}
 		// }
 
-		let calendar = new Calendar(calendarItem, {
-			plugins: [ dayGridPlugin, listPlugin ],
-			defaultView: checkType(),
-			locale: ruLocale,
-			weekNumberCalculation: 'ISO',
-			contentHeight: 'auto',
-			header: {
-				left:   'prev, title, next',
-				center: '',
-				right:  'today'
-			},
-			events: [
-			{
-				title: '12.00 Очень важное мероприятие',
-				start: '2020-05-15',
-				end: '2020-05-20',
-			},
-			{
-				title: '12.00 Тренинг корпорации МСП «Генерация бизнес-идеи» Светлогорск',
-				start: '2020-05-19',
-				end: '2020-06-02',
-			}
-			],
-			windowResize: function(view) {
+		if (calendarItem) {
+			let calendar = new Calendar(calendarItem, {
+				plugins: [ dayGridPlugin, listPlugin ],
+				defaultView: checkType(),
+				locale: ruLocale,
+				weekNumberCalculation: 'ISO',
+				contentHeight: 'auto',
+				header: {
+					left:   'prev, title, next',
+					center: '',
+					right:  'today'
+				},
+				events: [
+				{
+					title: '12.00 Очень важное мероприятие',
+					start: '2020-05-15',
+					end: '2020-05-20',
+				},
+				{
+					title: '12.00 Тренинг корпорации МСП «Генерация бизнес-идеи» Светлогорск',
+					start: '2020-05-19',
+					end: '2020-06-02',
+				}
+				],
+				windowResize: function(view) {
+					if (document.documentElement.clientWidth > 1200) {
+						this.changeView('dayGridMonth');
+					} else {
+						this.changeView('listWeek');
+					}
+				}
+			});
+
+			function checkType() {
 				if (document.documentElement.clientWidth > 1200) {
-					this.changeView('dayGridMonth');
+					return 'dayGridMonth';
 				} else {
-					this.changeView('listWeek');
+					return 'listWeek';
 				}
 			}
-		});
 
-		function checkType() {
-			if (document.documentElement.clientWidth > 1200) {
-				return 'dayGridMonth';
-			} else {
-				return 'listWeek';
-			}
-		}
+			calendar.render();
 
-		calendar.render();
+			(function toggleType() {
+				const btnMounth = document.querySelector('.tabs__btn--mounth');
+				const btnWeek = document.querySelector('.tabs__btn--week');
 
-		(function toggleType() {
-			const btnMounth = document.querySelector('.tabs__btn--mounth');
-			const btnWeek = document.querySelector('.tabs__btn--week');
+				if (btnMounth && btnWeek) {
+					btnMounth.addEventListener('click', function(e) {
+						e.preventDefault();
+						btnWeek.classList.remove('tabs__btn--active');
+						this.classList.add('tabs__btn--active');
+						calendar.changeView('dayGridMonth');
+					});
 
-			btnMounth.addEventListener('click', function(e) {
-				e.preventDefault();
-				btnWeek.classList.remove('tabs__btn--active');
-				this.classList.add('tabs__btn--active');
-				calendar.changeView('dayGridMonth');
-			});
+					btnWeek.addEventListener('click', function(e) {
+						e.preventDefault();
+						btnMounth.classList.remove('tabs__btn--active');
+						this.classList.add('tabs__btn--active');
+						calendar.changeView('listWeek');
+					});
+				}
 
-			btnWeek.addEventListener('click', function(e) {
-				e.preventDefault();
-				btnMounth.classList.remove('tabs__btn--active');
-				this.classList.add('tabs__btn--active');
-				calendar.changeView('listWeek');
-			});
-
-		})();
+			})();
+		}		
 
 	})();
 

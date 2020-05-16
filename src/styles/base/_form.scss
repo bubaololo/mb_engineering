@@ -11,6 +11,7 @@
 		height: 18px;
 		width: 18px;
 		margin-right: rem(15px);
+		flex-shrink: 0;
 		&-circle {
 			width: 8px;
 			height: 8px;
@@ -63,6 +64,12 @@
 	margin-bottom: rem(28px);
 	display: block;
 	width: calc(50% - 24px);
+	@include r(1200) {
+		width: 100%;
+	}
+	@include r(750) {
+		margin-bottom: rem(20px);
+	}
 	&--valid {
 		.input {
 			&__field {
@@ -115,7 +122,12 @@
 		
 	}
 	&--dark {
-		
+		.input {
+			&__field {
+				background-color: $black;
+				border-color: $light;
+			}
+		}
 	}
 }
 
@@ -123,6 +135,12 @@
 	margin-bottom: rem(28px);
 	display: block;
 	width: calc(50% - 24px);
+	@include r(1200) {
+		width: 100%;
+	}
+	@include r(750) {
+		margin-bottom: rem(20px);
+	}
 	&__title {
 		font-weight: 300;
 		font-size: rem(16px);
@@ -149,6 +167,9 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		color: #BDBDBD;
+		padding-left: rem(10px);
+		padding-right: rem(10px);
 	}
 	&__field {
 		display: none;

@@ -217,7 +217,15 @@
 		
 	}
 	&--dark {
-		
+		.footer {
+			&__top {
+				background-color: $black;
+				border-bottom: 1px solid $light;
+			}
+			&__bottom {
+				background-color: $black;
+			}
+		}
 	}
 }
 

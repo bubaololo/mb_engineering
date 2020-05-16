@@ -13,6 +13,10 @@ import Mmenu from 'mmenu-js';
 		"navbars": [
 		{
 			"position": "bottom",
+			"content": mobileContacts
+		},
+		{
+			"position": "bottom",
 			"content": mobileLinks
 		}
 		]

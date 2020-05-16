@@ -9,4 +9,5 @@ import "%modules%/header/header";
 import "%modules%/sliders/sliders";
 import "%modules%/footer/footer";
 import "%modules%/1_map/map";
+import "%modules%/form/form";
 import "%modules%/1_events/events";
