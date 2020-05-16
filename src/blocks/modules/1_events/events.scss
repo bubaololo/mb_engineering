@@ -69,6 +69,38 @@
 	}
 }
 
+.fc-view-container {
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.fc-listWeek-view {
+	.fc-widget-header {
+		padding: rem(22px);
+		background-color: $red !important;
+		color: $light;
+		font-weight: 500;
+	}
+	.fc-list-item-time {
+		padding: rem(22px);
+	}
+	.fc-list-item-title {
+		padding: rem(22px);
+		line-height: 1.6;
+	}
+	.fc-list-heading-main {
+		margin-right: 10px;
+		&:after {
+			content: ",";
+		}
+	}
+	.fc-list-item-marker {
+		// @include r(750) {
+		// 	display: none;
+		// }
+	}
+}
+
 .body {
 	&--light {
 		
@@ -77,3 +109,4 @@
 		
 	}
 }
+

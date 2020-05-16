@@ -6,35 +6,82 @@ import ruLocale from '@fullcalendar/core/locales/ru';
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
+	// function reInitCalendar(calendar) {
+	// 	calendar.destroy();
+	// 	calendar.render();
+	// }
 
-	(function() {
+	(function initCalendar() {
 
-		const calendarArrow = document.querySelectorAll('.calendar');
+		const calendarItem = document.querySelector('.calendar');
 
-		if (calendarArrow) {
-			for(let i = 0; i < calendarArrow.length; i++) {
-				let calendar = new Calendar(calendarArrow[i], {
-					plugins: [ dayGridPlugin, listPlugin ],
-					// defaultView: 'listWeek', // это скрыть
-					locale: ruLocale,
-					weekNumberCalculation: 'ISO',
-					header: {
-						left:   'prev, title, next',
-						center: '',
-						right:  'today'
-					},
-					events: [
-					{
-						title: '12.00 Тренинг корпорации МСП «Генерация бизнес-идеи» Светлогорск',
-						start: '2020-05-25',
-						end: '2020-06-02'
-					}
-					]
-				});
+		// if (calendarArrow) {
+		// 	for(let i = 0; i < calendarArrow.length; i++) {
 
-				calendar.render();
+		// 	}
+		// }
+
+		let calendar = new Calendar(calendarItem, {
+			plugins: [ dayGridPlugin, listPlugin ],
+			defaultView: checkType(),
+			locale: ruLocale,
+			weekNumberCalculation: 'ISO',
+			contentHeight: 'auto',
+			header: {
+				left:   'prev, title, next',
+				center: '',
+				right:  'today'
+			},
+			events: [
+			{
+				title: '12.00 Очень важное мероприятие',
+				start: '2020-05-15',
+				end: '2020-05-20',
+			},
+			{
+				title: '12.00 Тренинг корпорации МСП «Генерация бизнес-идеи» Светлогорск',
+				start: '2020-05-19',
+				end: '2020-06-02',
+			}
+			],
+			windowResize: function(view) {
+				if (document.documentElement.clientWidth > 1200) {
+					this.changeView('dayGridMonth');
+				} else {
+					this.changeView('listWeek');
+				}
+			}
+		});
+
+		function checkType() {
+			if (document.documentElement.clientWidth > 1200) {
+				return 'dayGridMonth';
+			} else {
+				return 'listWeek';
 			}
 		}
+
+		calendar.render();
+
+		(function toggleType() {
+			const btnMounth = document.querySelector('.tabs__btn--mounth');
+			const btnWeek = document.querySelector('.tabs__btn--week');
+
+			btnMounth.addEventListener('click', function(e) {
+				e.preventDefault();
+				btnWeek.classList.remove('tabs__btn--active');
+				this.classList.add('tabs__btn--active');
+				calendar.changeView('dayGridMonth');
+			});
+
+			btnWeek.addEventListener('click', function(e) {
+				e.preventDefault();
+				btnMounth.classList.remove('tabs__btn--active');
+				this.classList.add('tabs__btn--active');
+				calendar.changeView('listWeek');
+			});
+
+		})();
 
 	})();
 

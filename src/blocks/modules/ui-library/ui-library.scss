@@ -1635,15 +1635,35 @@
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid #D1D9DD;
+	@include r(1200) {
+		padding-bottom: rem(10px);
+	}
 	&__tabs {
 		font-weight: 300;
 		line-height: rem(19px);
 		display: flex;
 		justify-content: space-between;
+		@include r(1200) {
+			display: none;
+		}
 	}
 	&__nav {
 		display: flex;
 		align-items: center;
+		@include r(1200) {
+			display: none;
+		}
+	}
+	&__dropdown {
+		display: none;
+		border: 1px solid #D1D9DD;
+		padding: rem(10px);
+		border-radius: 5px;
+		@include r(1200) {
+			display: block;
+			width: 230px;
+			display: none;
+		}
 	}
 	&__sep {
 		width: 1px;
@@ -1681,6 +1701,33 @@
 				left: 0px;
 				right: 0px;
 				background-color: $red;
+			}
+		}
+	}
+	&__btns {
+		@include r(1200) {
+			display: none;
+		}
+	}
+	&__btn {
+		display: inline-flex;
+		height: rem(36px);
+		width: rem(36px);
+		align-items: center;
+		justify-content: center;
+		svg {
+			display: block;
+			width: 24px;
+			height: 20px;
+			fill: #D1D9DD;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+		&--active {
+			pointer-events: none;
+			svg {
+				fill: $accent;
 			}
 		}
 	}

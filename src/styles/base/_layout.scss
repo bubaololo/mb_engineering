@@ -11,7 +11,7 @@ html {
 	flex-direction: column;
 	justify-content: space-between;
 	&__content {
-		padding-bottom: rem(40px);
+		// padding-bottom: rem(40px);
 		&--none {
 			padding-top: 0px;
 			padding-bottom: 0px;
@@ -72,9 +72,9 @@ html {
 		padding-top: rem(40px);
 		padding-bottom: rem(60px);
 	}
-	// &:last-child {
-	// 	margin-bottom: 0px;
-	// }
+	&:last-child {
+		padding-bottom: 140px;
+	}
 	&--dark {
 		background-color: #F7F9FA;
 		padding-top: rem(95px);
