@@ -96,6 +96,8 @@
 	img {
 		display: block;
 		margin-bottom: 1rem;
+		width: 100%;
+		height: auto;
 	}
 	iframe {
 		display: block;
@@ -114,7 +116,7 @@
 	.btn {
 		padding-left: rem(20px);
 		padding-right: rem(20px);
-		margin-bottom: 1.5rem;
+		margin-bottom: 2.5rem;
 		margin-top: 1rem;
 		svg {
 			margin-bottom: 0px;
@@ -149,12 +151,21 @@
 		}
 		&--6 {
 			width: 50%;
+			@include r(1200) {
+				width: 100%;
+			}
 		}
 		&--4 {
 			width: calc(100% / 3);
+			@include r(1200) {
+				width: 100%;
+			}
 		}
 		&--3 {
 			width: 25%;
+			@include r(1200) {
+				width: 100%;
+			}
 		}
 
 	}

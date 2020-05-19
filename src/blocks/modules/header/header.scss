@@ -110,6 +110,10 @@
 	&__btn {
 		width: 180px;
 		margin-left: rem(20px);
+		&--profile {
+			background: none;
+			border: 1px solid #58595B;
+		}
 	}
 	&__mob-menu {
 		display: none;

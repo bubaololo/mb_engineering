@@ -71,9 +71,12 @@ html {
 	@include r(1200) {
 		padding-top: rem(40px);
 		padding-bottom: rem(40px);
-		.container :last-child {
-			margin-bottom: 0;
-		}
+		// .container :last-child {
+		// 	margin-bottom: 0;
+		// }
+		// &:last-child {
+		// 	background-color: red !important;
+		// }
 	}
 	&:last-child {
 		padding-bottom: rem(150px);
