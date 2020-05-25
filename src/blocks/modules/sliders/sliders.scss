@@ -210,10 +210,33 @@
 
 .body {
 	&--light {
-		
+
 	}
 	&--dark {
-		
+		.slider-front {
+			&__slide {
+				border: 1px solid $light;
+			}
+			&__content {
+				background-color: $black;
+			}
+			&__ill-footer {
+				background-color: $black;
+			}
+			&__fraction {
+				background-color: #d0d0d0;
+				color: $black;
+			}
+			&__sep {
+				background-color: $black;
+			}
+			&__all {
+				color: $black;
+			}
+			&__btn {
+				background-color: #d0d0d0;
+			}
+		}
 	}
 }
 

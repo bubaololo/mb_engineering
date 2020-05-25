@@ -2274,7 +2274,6 @@
 	}
 	@include r(1200) {
 		padding: rem(25px);
-		border: 1px solid $light;
 		min-height: 160px;
 	}
 	&__number {
@@ -2310,6 +2309,7 @@
 	&--dark {
 		.step-link {
 			background-color: $black;
+			border: 1px solid $light;
 			&__number {
 				display: none;
 			}

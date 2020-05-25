@@ -106,7 +106,9 @@
 		
 	}
 	&--dark {
-		
+		.fc-today {
+			background-color: $red !important;
+		}
 	}
 }
 

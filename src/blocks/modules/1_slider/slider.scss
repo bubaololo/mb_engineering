@@ -16,6 +16,9 @@
 		
 	}
 	&--dark {
-		
+		.front-slider {
+			background-color: $black;
+			border-bottom: 1px solid $light;
+		}
 	}
 }
