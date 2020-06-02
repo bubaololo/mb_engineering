@@ -98,11 +98,10 @@ function ready() {
 			for (let i = 0; i < dropArrow.length; i++) {
 				dropArrow[i].addEventListener('click', function() {
 					this.parentNode.classList.toggle('drop-card--open');
-					console.log(this.parentNode)
 				})
 
 				dropArrow[i].addEventListener('keydown', function() {
-					if (event.code == 'Space') {
+					if (event.code == 'Enter') {
 						event.preventDefault();
 						this.parentNode.classList.toggle('drop-card--open');
 					}

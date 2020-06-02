@@ -64,6 +64,7 @@
 	}
 	&__links-column {
 		@include r(1000) {
+			visibility: hidden;
 			display: none;
 		}
 		&--1 {
@@ -81,6 +82,7 @@
 		border-bottom: 1px solid #828282;
 		padding-bottom: rem(50px);
 		@include r(1000) {
+			visibility: hidden;
 			display: none;
 		}
 	}
@@ -106,6 +108,7 @@
 
 		}
 		@include r(750) {
+			visibility: hidden;
 			display: none;
 		}
 	}

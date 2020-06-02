@@ -1,4 +1,5 @@
 // Скрывание изображений
+
 (function toggleImage(){
 
 	const btn = document.querySelector('#toggle-image');
@@ -6,29 +7,90 @@
 	const imageBgArray = document.querySelectorAll('.hide-bg');
 	const hideImageArray = document.querySelectorAll('.hide-image');
 	const noneImageArray = document.querySelectorAll('.none-image');
+	let localVarImage = localStorage.getItem("images");
 
-	if (btn && imageArray) {
-		btn.addEventListener('click', toggle);
+	if (localVarImage === null) {
+		enableImages();
+		localVarImage = localStorage.getItem("images");
 	}
 
-	function toggle() {
+	if (localStorage.images === 'false') {
+		disableImages();
+		localVarImage = localStorage.getItem("images");
+	} else {
+		enableImages();
+		localVarImage = localStorage.getItem("images");
+
+	}
+
+
+	if (btn && imageArray) {
+		btn.addEventListener('click', function(){
+			if (localStorage.images === 'true'){
+				disableImages();
+				console.log(localStorage.images)
+				localStorage.setItem("images", false);
+				
+			} else {
+				enableImages();
+				console.log(localStorage.images)
+				localStorage.setItem("images", true);
+			}
+		});
+	}
+
+	// (function initTheme(){
+	// 	if (localVarImage == false||0) {
+	// 		localStorage.setItem("theme","light");
+	// 	} else {
+
+	// 	}
+	// })();
+
+	function enableImages() {
 		let i;
 		for(i = 0; i < imageArray.length; i++) {
-			imageArray[i].classList.toggle('image--hide');
+			imageArray[i].classList.remove('image--hide');
 		}
 		let n;
 		for(n = 0; n < imageBgArray.length; n++) {
-			imageBgArray[n].classList.toggle('hide-bg--active');
+			imageBgArray[n].classList.remove('hide-bg--active');
 		}
 		let z;
 		for(z = 0; z < hideImageArray.length; z++) {
-			hideImageArray[z].classList.toggle('hide-image--active');
+			hideImageArray[z].classList.remove('hide-image--active');
 		}
 
 		let m;
 		for(m = 0; m < noneImageArray.length; m++) {
-			noneImageArray[m].classList.toggle('none-image--active');
+			noneImageArray[m].classList.remove('none-image--active');
 		}
+		localStorage.setItem("images", 'true');
+		localVarImage = localStorage.getItem("images");
+		btn.innerHTML = '<span>Выключить изображения</span>';
+	}
+
+	function disableImages() {
+		let i;
+		for(i = 0; i < imageArray.length; i++) {
+			imageArray[i].classList.add('image--hide');
+		}
+		let n;
+		for(n = 0; n < imageBgArray.length; n++) {
+			imageBgArray[n].classList.add('hide-bg--active');
+		}
+		let z;
+		for(z = 0; z < hideImageArray.length; z++) {
+			hideImageArray[z].classList.add('hide-image--active');
+		}
+
+		let m;
+		for(m = 0; m < noneImageArray.length; m++) {
+			noneImageArray[m].classList.add('none-image--active');
+		}
+		localStorage.setItem("images", 'false');
+		localVarImage = localStorage.getItem("images");
+		btn.innerHTML = '<span>Включить изображения</span>';
 	}
 
 })();

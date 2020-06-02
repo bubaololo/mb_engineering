@@ -184,9 +184,11 @@
 	transition: 0.3s all;
 	overflow: hidden;
 	z-index: 5;
+	visibility: hidden;
 	&--open {
 		max-height: 500px;
 		opacity: 1;
+		visibility: visible;
 	}
 	&__container {
 		padding-top: rem(55px);

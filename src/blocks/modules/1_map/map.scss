@@ -31,6 +31,7 @@
 		&--desktop {
 			@include r(1200) {
 				display: none;
+				visibility: hidden;
 			}
 		}
 		@include r(1200) {
