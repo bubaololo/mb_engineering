@@ -106,18 +106,46 @@
 		btn.addEventListener('click', toggle);
 	}
 
-	(function initTheme() {
+	// if (localVarImage === null) {
+	// 	enableImages();
+	// 	localVarImage = localStorage.getItem("images");
+	// }
 
-		if (localVarContrast == 'light'||false||0) {
-			localStorage.setItem("theme","light");
-			body.classList.add('body--light');
-		} else {
-			body.classList.add('body--dark');
-		}
-	})();
+	// if (localStorage.images === 'false') {
+	// 	disableImages();
+	// 	localVarImage = localStorage.getItem("images");
+	// } else {
+	// 	enableImages();
+	// 	localVarImage = localStorage.getItem("images");
+
+	// }
+
+	if (localVarContrast === null) {
+		localStorage.setItem("theme","light");
+		localVarContrast = localStorage.getItem("theme");
+	}
+
+	if (localVarContrast === 'light') {
+		
+		body.classList.remove('body--dark');
+		body.classList.add('body--light');
+	} else {
+		body.classList.remove('body--light');
+		body.classList.add('body--dark');
+	}
+
+	// (function initTheme() {
+
+	// 	if (localVarContrast === 'light'||false||null||undefined) {
+	// 		localStorage.setItem("theme","light");
+	// 		body.classList.add('body--light');
+	// 	} else {
+	// 		body.classList.add('body--dark');
+	// 	}
+	// })();
 
 	function toggle(){
-		if (localVarContrast == 'light') {
+		if (localVarContrast === 'light') {
 			localStorage.setItem("theme","dark");
 			localVarContrast = localStorage.getItem("theme");
 			body.classList.remove('body--light');

@@ -237,6 +237,9 @@
 		
 	}
 	&--dark {
-		
+		.drop-nav {
+			background-color: $black !important;
+			border-bottom: 2px solid $light;
+		}
 	}
 }
