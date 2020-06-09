@@ -159,10 +159,90 @@
 /*!***********************************************!*\
   !*** ./src/blocks/modules/1_events/events.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.esm.js");
+/* harmony import */ var _fullcalendar_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/list */ "./node_modules/@fullcalendar/list/main.esm.js");
+/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.esm.js");
+/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fullcalendar/core/locales/ru */ "./node_modules/@fullcalendar/core/locales/ru.js");
+/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3__);
 
 
+
+
+document.addEventListener("DOMContentLoaded", ready);
+
+function ready() {
+  var linkAll = '../events-all.json';
+  var linkMission = '../events-mission.json';
+  var linkLearn = '../events-learn.json';
+  var linkPresent = '../events-present.json';
+
+  function initCalendar(linkType) {
+    var calendarItem = document.querySelector('.calendar'); // if (calendarArrow) {
+    // 	for(let i = 0; i < calendarArrow.length; i++) {
+    // 	}
+    // }
+
+    if (calendarItem) {
+      var checkType = function checkType() {
+        if (document.documentElement.clientWidth > 1200) {
+          return 'dayGridMonth';
+        } else {
+          return 'listWeek';
+        }
+      };
+
+      var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarItem, {
+        plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_1__["default"]],
+        defaultView: checkType(),
+        locale: _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3___default.a,
+        weekNumberCalculation: 'ISO',
+        contentHeight: 'auto',
+        header: {
+          left: 'prev, title, next',
+          center: '',
+          right: 'today'
+        },
+        events: linkType,
+        windowResize: function windowResize(view) {
+          if (document.documentElement.clientWidth > 1200) {
+            this.changeView('dayGridMonth');
+          } else {
+            this.changeView('listWeek');
+          }
+        }
+      });
+      calendar.render();
+
+      (function toggleType() {
+        var btnMounth = document.querySelector('.tabs__btn--mounth');
+        var btnWeek = document.querySelector('.tabs__btn--week');
+
+        if (btnMounth && btnWeek) {
+          btnMounth.addEventListener('click', function (e) {
+            e.preventDefault();
+            btnWeek.classList.remove('tabs__btn--active');
+            this.classList.add('tabs__btn--active');
+            calendar.changeView('dayGridMonth');
+          });
+          btnWeek.addEventListener('click', function (e) {
+            e.preventDefault();
+            btnMounth.classList.remove('tabs__btn--active');
+            this.classList.add('tabs__btn--active');
+            calendar.changeView('listWeek');
+          });
+        }
+      })();
+    }
+  }
+
+  ;
+  initCalendar(linkAll);
+}
 
 /***/ }),
 
@@ -319,6 +399,112 @@ __webpack_require__.r(__webpack_exports__);
     }]
   });
 })();
+
+/***/ }),
+
+/***/ "./src/blocks/modules/modal/modal.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/modal/modal.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_0__);
+
+
+(function () {
+  $.ajax({
+    url: '/piece.json',
+    type: "../events.json",
+    dataType: "json",
+    success: function success(data) {
+      alert(data);
+    }
+  });
+})(); // const events = [
+// {
+// 	"id": 0,
+// 	"title": "Первое мероприятие",
+// 	"extendedProps": "",
+// 	"eventConstraint": "",
+// 	"eventOverlap": "",
+// 	"eventAllow": "",
+// 	"eventBackgroundColor": "",
+// 	"eventTextColor": "",
+// 	"eventClassNames": "",
+// 	"eventContent": "<div class='text'><h3>Заголовок первого мероприятия</h3><p>Большой текст-описание первого мероприятия</p></div>"
+// },
+// {
+// 	"id": 1,
+// 	"title": "Второе мероприятие",
+// 	"extendedProps": "",
+// 	"eventConstraint": "",
+// 	"eventOverlap": "",
+// 	"eventAllow": "",
+// 	"eventBackgroundColor": "",
+// 	"eventTextColor": "",
+// 	"eventClassNames": "",
+// 	"eventContent": '<div class="modal text"><h4>Онлайн-тренинг «Возможности маркетплейсов для малого бизнеса: на примере торговой платформы Wildberries»</h4><a href="" class="btn btn--60"><span>Страница мероприятия</span></a><p>В кризисной ситуации, когда розничные точки закрылись практически в один день, компании почти полностью переместили свою деятельность в Интернет. И для малого бизнеса этот путь стал единственным способом выжить Однако одномоментно сделать собственный продающий сайт и привлечь туда клиентов очень сложно. Выходом для малого и среднего бизнеса стало сотрудничество с маркетплейсами. В число крупнейших из них входит торговая платформа Wildberries.</p><p><b>На вебинаре разберём вопросы:</b></p><ul><li>могут ли маркетплейсы решить проблемы, вызванные кризисом?</li><li>сотрудничество с Wildberries: как стать партнером крупнейшего продавца Рунета?</li><li>возможности торговой платформы Wildberries для управления поставками и продажами.</li><li>какие инструменты важно использовать для успешных продаж в онлайн-магазине?</li><li>на какую поддержку могут рассчитывать предприниматели.</li></ul><p>Ответы на эти и другие вопросы о работе с маркетплейсом Wildberries вы сможете найти, став участником онлайн-тренинга, организованного совместно с АО «Корпорацией МСП» и Wildberries. Вы сможете рассмотреть ситуацию со всех сторон. В числе спикеров будут и представитель Wildberries, и предприниматель, который с ними успешно сотрудничает, и представители инфраструктуры поддержки предпринимателей.</p></div>'
+// },
+// {
+// 	"id": 2,
+// 	"title": "Третье мероприятие",
+// 	"extendedProps": "",
+// 	"eventConstraint": "",
+// 	"eventOverlap": "",
+// 	"eventAllow": "",
+// 	"eventBackgroundColor": "",
+// 	"eventTextColor": "",
+// 	"eventClassNames": "",
+// 	"eventContent": "<div class='text'><h3>Заголовок третьего мероприятия</h3><p>Большой текст-описание третьего мероприятия</p></div>"
+// }
+// ]
+
+
+$(document).ready(function () {
+  // $('.slider-front__more').magnificPopup({
+  // 	items: [
+  // 	{
+  // 		src: events[1].eventContent,
+  // 		type: 'inline'
+  // 	},
+  // 	],
+  // 	callbacks: {
+  // 		beforeOpen: function() {
+  // 			console.log(this);
+  // 		},
+  // 	}
+  // });
+  // $('.slider-front__more').magnificPopup({
+  // 	// type: 'inline',
+  // 	items: [
+  // 	{
+  // 		// src: events[1].eventContent,
+  // 		src: events[$(this).data('data-id')],
+  // 		type: 'inline'
+  // 	},
+  // 	],
+  // 	// callbacks: {
+  // 	// 	beforeOpen: function() {
+  // 	// 		console.log($(this).data('data-id'));
+  // 	// 	},
+  // 	// }
+  // });
+  $('.slider-front__more').click(function (e) {
+    e.preventDefault();
+    var eventNumber = $(this).data('id');
+    $.magnificPopup.open({
+      items: [{
+        src: events[eventNumber].eventContent,
+        type: 'inline'
+      }]
+    });
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -575,95 +761,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************!*\
   !*** ./src/blocks/modules/ui-library/ui-library.js ***!
   \*****************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.esm.js");
-/* harmony import */ var _fullcalendar_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/list */ "./node_modules/@fullcalendar/list/main.esm.js");
-/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.esm.js");
-/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fullcalendar/core/locales/ru */ "./node_modules/@fullcalendar/core/locales/ru.js");
-/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
-  // function reInitCalendar(calendar) {
-  // 	calendar.destroy();
-  // 	calendar.render();
-  // }
-  (function initCalendar() {
-    var calendarItem = document.querySelector('.calendar'); // if (calendarArrow) {
-    // 	for(let i = 0; i < calendarArrow.length; i++) {
-    // 	}
-    // }
-
-    if (calendarItem) {
-      var checkType = function checkType() {
-        if (document.documentElement.clientWidth > 1200) {
-          return 'dayGridMonth';
-        } else {
-          return 'listWeek';
-        }
-      };
-
-      var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarItem, {
-        plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_1__["default"]],
-        defaultView: checkType(),
-        locale: _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3___default.a,
-        weekNumberCalculation: 'ISO',
-        contentHeight: 'auto',
-        header: {
-          left: 'prev, title, next',
-          center: '',
-          right: 'today'
-        },
-        events: [{
-          title: '12.00 Очень важное мероприятие',
-          start: '2020-05-15',
-          end: '2020-05-20'
-        }, {
-          title: '12.00 Тренинг корпорации МСП «Генерация бизнес-идеи» Светлогорск',
-          start: '2020-05-19',
-          end: '2020-06-02'
-        }],
-        windowResize: function windowResize(view) {
-          if (document.documentElement.clientWidth > 1200) {
-            this.changeView('dayGridMonth');
-          } else {
-            this.changeView('listWeek');
-          }
-        }
-      });
-      calendar.render();
-
-      (function toggleType() {
-        var btnMounth = document.querySelector('.tabs__btn--mounth');
-        var btnWeek = document.querySelector('.tabs__btn--week');
-
-        if (btnMounth && btnWeek) {
-          btnMounth.addEventListener('click', function (e) {
-            e.preventDefault();
-            btnWeek.classList.remove('tabs__btn--active');
-            this.classList.add('tabs__btn--active');
-            calendar.changeView('dayGridMonth');
-          });
-          btnWeek.addEventListener('click', function (e) {
-            e.preventDefault();
-            btnMounth.classList.remove('tabs__btn--active');
-            this.classList.add('tabs__btn--active');
-            calendar.changeView('listWeek');
-          });
-        }
-      })();
-    }
-  })(); // Выпадение дроп-карточки
-
-
+  // Выпадение дроп-карточки
   (function () {
     var dropArrow = document.querySelectorAll('.drop-card__header');
 
@@ -796,6 +900,7 @@ function ready() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ui_library_ui_library__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/ui-library/ui-library */ "./src/blocks/modules/ui-library/ui-library.js");
+/* harmony import */ var _modules_ui_library_ui_library__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_ui_library_ui_library__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_panel_panel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/panel/panel */ "./src/blocks/modules/panel/panel.js");
 /* harmony import */ var _modules_panel_panel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_panel_panel__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_m_menu_m_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/m-menu/m-menu */ "./src/blocks/modules/m-menu/m-menu.js");
@@ -808,11 +913,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_1_map_map__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_1_map_map__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/form/form */ "./src/blocks/modules/form/form.js");
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_form_form__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/1_events/events */ "./src/blocks/modules/1_events/events.js");
-/* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_1_events_events__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/modal/modal */ "./src/blocks/modules/modal/modal.js");
+/* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/1_events/events */ "./src/blocks/modules/1_events/events.js");
 // Плагины
 // import $ from 'jquery';
 // Блоки
+
 
 
 
