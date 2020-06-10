@@ -260,6 +260,10 @@ html {
   background-color: #000000;
 }
 
+.text {
+  line-height: 1.5;
+}
+
 .text h1,
 .text h2,
 .text h3,
@@ -2280,6 +2284,95 @@ img.mfp-img {
 
 .mfp-gallery .mfp-image-holder .mfp-figure {
   cursor: pointer;
+}
+
+/**
+ * jQuery Timepicker
+ * http://timepicker.co
+ *
+ * Enhances standard form input fields helping users to select (or type) times.
+ *
+ * Copyright (c) 2016 Willington Vega; Licensed MIT, GPL
+ */
+
+.ui-timepicker-container {
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ui-timepicker {
+  box-sizing: content-box;
+  display: block;
+  height: 205px;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0 1px;
+  text-align: center;
+}
+
+.ui-timepicker-viewport {
+  box-sizing: content-box;
+  display: block;
+  height: 205px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  /* IE */
+}
+
+.ui-timepicker-standard {
+  /* overwrites .ui-widget */
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1.1em;
+  /* overwrites .ui-widget-content */
+  background-color: #FFF;
+  border: 1px solid #AAA;
+  color: #222;
+  /* overwrites .ui-menu */
+  margin: 0;
+  padding: 2px;
+}
+
+.ui-timepicker-standard a {
+  border: 1px solid transparent;
+  color: #222;
+  display: block;
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+}
+
+.ui-timepicker-standard .ui-state-hover {
+  /* overwrites .ui-state-hover */
+  background-color: #DADADA;
+  border: 1px solid #999;
+  font-weight: normal;
+  color: #212121;
+}
+
+.ui-timepicker-standard .ui-menu-item {
+  /* overwrites .ui-menu and .ui-menu-item */
+  /*clear: left;
+    float: left;*/
+  margin: 0;
+  padding: 0;
+}
+
+.ui-timepicker-corners,
+.ui-timepicker-corners .ui-corner-all {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.ui-timepicker-hidden {
+  /* overwrites .ui-helper-hidden */
+  display: none;
+}
+
+.ui-timepicker-no-scrollbar .ui-timepicker {
+  border: none;
 }
 
 .block-text {
@@ -6023,6 +6116,12 @@ img.mfp-img {
   background-color: #ffffff;
 }
 
+.form--modal {
+  padding: 0px;
+  border: none;
+  background-image: none;
+}
+
 .form__head-text {
   font-weight: 500;
   font-size: 1.5rem;
@@ -6064,6 +6163,11 @@ img.mfp-img {
   background-image: none !important;
   border: 1px solid #ffffff;
   background-color: #000000;
+}
+
+.ui-timepicker-standard {
+  background-color: #ffffff;
+  z-index: 5000 !important;
 }
 
 /*!
@@ -9373,11 +9477,13 @@ body.modal-open .mm-slideout {
 
 .modal {
   background-color: #ffffff;
-  max-width: 774px;
+  max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 40px 60px 80px 60px;
+  padding: 40px 60px;
   position: relative;
+  border-radius: 10px;
 }
 
 .modal .mfp-close {
@@ -10036,6 +10142,10 @@ body.modal-open .mm-slideout {
   .mob-contacts {
     display: block;
   }
+
+  .modal {
+    padding: 20px 30px;
+  }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -10334,6 +10444,17 @@ body.modal-open .mm-slideout {
     height: 3.125rem;
   }
 
+  .slider-front__toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slider-front__price {
+    order: -1;
+    margin-left: 0px;
+    margin-bottom: 30px;
+  }
+
   .slider-front__control {
     left: 50%;
     transform: translateX(-50%);
@@ -10396,6 +10517,12 @@ body.modal-open .mm-slideout {
 
   .books--cards .book-card__column-thumb img {
     height: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .modal {
+    padding: 10px 10px;
   }
 }
 

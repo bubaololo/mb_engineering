@@ -6,6 +6,7 @@
 		background: #F7F9FA;
 		border-radius: 5px;
 		overflow: hidden;
+		// height: auto;
 	}
 	&__ill {
 		width: calc(100% / 12 * 5);
@@ -62,6 +63,10 @@
 	&__toolbar {
 		display: flex;
 		align-items: center;
+		@include r(650) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 	&__more {
 		width: 228px;
@@ -69,6 +74,11 @@
 	&__price {
 		margin-left: 45px;
 		font-weight: normal;
+		@include r(650) {
+			order: -1;
+			margin-left: 0px;
+			margin-bottom: 30px;
+		}
 	}
 	&__control {
 		position: absolute;

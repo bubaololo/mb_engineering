@@ -7,6 +7,11 @@
 	background-repeat: no-repeat;
 	background-position: calc(100% - 60px) 30px;
 	background-color: $light;
+	&--modal {
+		padding: 0px;
+		border: none;
+		background-image: none;
+	}
 	@include r(750) {
 		padding: rem(25px);
 	}
@@ -81,4 +86,9 @@
 			background-color: $black;
 		}
 	}
+}
+
+.ui-timepicker-standard {
+	background-color: $light;
+	z-index: 5000 !important;
 }
