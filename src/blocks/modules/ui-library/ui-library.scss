@@ -260,6 +260,9 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		max-width: 100%;
+		strong {
+			color: $red;
+		}
 		@include r(1200) {
 			font-size: rem(40px);
 			display: inline-block;
@@ -2273,5 +2276,135 @@
 				color: $light;
 			}
 		}
+	}
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	font-weight: 300;
+	font-size: rem(16px);
+	margin-bottom: 3rem;
+	&__link {
+		margin-right: rem(5px);
+		margin-left: rem(5px);
+		display: inline-flex;
+		text-decoration: none;
+		height: 27px;
+		justify-content: center;
+		align-items: center;
+		color: $black;
+		&:hover {
+			opacity: 0.7;
+		}
+		&--number {
+			background-color: $light;
+			border-radius: 30px;
+			min-width: 27px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: $accent;
+		}
+		&--prev {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		&--next {
+			margin-left: 15px;
+			margin-right: 15px;
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+		&--now {
+			background-color: $red;
+			font-weight: 500;
+			color: $light;
+		}
+		&--start, &--end {
+			@include r(1200) {
+				display: none;
+			}
+		}
+		&--static {
+			pointer-events: none;
+			svg {
+				fill: $black !important;
+			}
+		}
+	}
+}
+
+.result-toolbar {
+	display: flex;
+	margin-bottom: rem(50px);
+	align-items: center;
+	@include r(1200) {
+		display: block;
+	}
+	&__text {
+		flex-grow: 1;
+		min-width: 0px;
+		@include r(1200) {
+			margin-bottom: 20px;
+		}
+	}
+	&__btn {
+		background-color: $light;
+		border-radius: 50px;
+		padding-left: 20px;
+		padding-right: 20px;
+		border: none;
+		height: 35px;
+		font-family: $font;
+		font-size: 14px;
+		color: #58595B;
+		cursor: pointer;
+		transition: 0.3s all;
+		margin-left: 20px;
+		&--active {
+			background-color: $red;
+			color: $light;
+			pointer-events: none;
+		}
+		@include r(1200) {
+			margin-left: 0px;
+			margin-bottom: 10px;
+			margin-right: 20px;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.result {
+	display: block;
+	padding: 30px;
+	display: block;
+	background-color: $light;
+	text-decoration: none;
+	margin-bottom: rem(20px);
+	&:hover {
+		opacity: 0.7;
+	}
+	&__title {
+		color: $black;
+		font-weight: 500;
+		font-size: rem(24px);
+		margin-bottom: rem(20px);
+		@include r(1200) {
+			font-size: rem(20px);
+		}
+	}
+	&__text {
+		font-weight: 300;
+		font-size: rem(16px);
+		line-height: rem(24px);
+		color: #58595B;
 	}
 }
