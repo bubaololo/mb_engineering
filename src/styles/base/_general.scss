@@ -11,6 +11,10 @@ svg, img {
 	width: 1rem;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .body {
 	font-family: $font;
 	font-size: 16px;

@@ -6,7 +6,6 @@
 		background: #F7F9FA;
 		border-radius: 5px;
 		overflow: hidden;
-		// height: auto;
 	}
 	&__ill {
 		width: calc(100% / 12 * 5);
@@ -274,11 +273,17 @@
 		position: relative;
 		@include r(1200) {
 			padding: rem(25px);
-			padding-right: rem(55px);
+			padding-right: rem(58px);
+		}
+		@include r(950) {
+			padding-bottom: rem(110px);
 		}
 	}
 	&__text {
 		margin-bottom: rem(35px);
+		@include r(950) {
+			margin-bottom: rem(15px);
+		}
 	}
 	&__time {
 		color: #D1D9DD;
@@ -295,7 +300,8 @@
 		z-index: 2;
 		left: calc(100% / 12 * 5 + 50px);
 		@include r(950) {
-			display: none;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 	&__fraction {
@@ -315,9 +321,9 @@
 		flex-direction: column;
 		font-size: rem(14px);
 		padding: 10px;
-		@include r(950) {
-			width: 48px;
-		}
+		// @include r(950) {
+		// 	display: none;
+		// }
 	}
 	&__now {
 

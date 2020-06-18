@@ -2409,3 +2409,30 @@
 		color: #58595B;
 	}
 }
+
+.page-nav {
+	margin-bottom: rem(65px);
+	background: #F7F9FA;
+	border: 1px solid #EBEBEB;
+	border-radius: 5px;
+	padding-top: rem(29px);
+	padding-bottom: rem(10px);
+	padding-left: rem(35px);
+	padding-right: rem(35px);
+	&__link {
+		text-decoration: none;
+		color: $black;
+		display: inline-block;
+		font-weight: normal;
+		margin-bottom: rem(19px);
+		margin-right: rem(38px);
+		scroll-behavior: smooth;
+		&:hover {
+			opacity: 0.7;
+		}
+		&--accent {
+			font-weight: 500;
+			color: $red;
+		}
+	}
+}

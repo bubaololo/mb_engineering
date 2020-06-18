@@ -154,6 +154,10 @@ img {
   width: 1rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .body {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
@@ -4267,6 +4271,36 @@ img.mfp-img {
   color: #58595B;
 }
 
+.page-nav {
+  margin-bottom: 4.0625rem;
+  background: #F7F9FA;
+  border: 1px solid #EBEBEB;
+  border-radius: 5px;
+  padding-top: 1.8125rem;
+  padding-bottom: 0.625rem;
+  padding-left: 2.1875rem;
+  padding-right: 2.1875rem;
+}
+
+.page-nav__link {
+  text-decoration: none;
+  color: #000000;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 1.1875rem;
+  margin-right: 2.375rem;
+  scroll-behavior: smooth;
+}
+
+.page-nav__link:hover {
+  opacity: 0.7;
+}
+
+.page-nav__link--accent {
+  font-weight: 500;
+  color: #E04E39;
+}
+
 .progress {
   width: 90px;
   height: 90px;
@@ -6095,14 +6129,44 @@ img.mfp-img {
   padding-bottom: 3.5rem;
 }
 
+.footer__info-column--1 {
+  flex-shrink: 0;
+  width: calc(100% / 3);
+}
+
+.footer__info-column--2 {
+  flex-shrink: 0;
+  width: calc(100% / 3);
+}
+
+.footer__info-column--3 {
+  flex-grow: 1;
+}
+
 .footer__logo {
   display: block;
-  margin-right: 2.5rem;
 }
 
 .footer__logo img {
   display: block;
   width: 180px;
+}
+
+.footer__logo:hover {
+  opacity: 0.7;
+}
+
+.footer__logo-2 {
+  display: block;
+}
+
+.footer__logo-2 img {
+  display: block;
+  width: 127px;
+}
+
+.footer__logo-2:hover {
+  opacity: 0.7;
 }
 
 .footer__title {
@@ -6181,7 +6245,7 @@ img.mfp-img {
 }
 
 .footer__social-link:hover {
-  opacity: 0.7;
+  background-color: #E04E39;
 }
 
 .footer__search {
@@ -10180,7 +10244,7 @@ body.modal-open .mm-slideout {
 
   .slider-page__content {
     padding: 1.5625rem;
-    padding-right: 3.4375rem;
+    padding-right: 3.625rem;
   }
 
   .slider-page__time {
@@ -10341,12 +10405,17 @@ body.modal-open .mm-slideout {
     display: none;
   }
 
-  .slider-page__control {
-    display: none;
+  .slider-page__content {
+    padding-bottom: 6.875rem;
   }
 
-  .slider-page__fraction {
-    width: 48px;
+  .slider-page__text {
+    margin-bottom: 0.9375rem;
+  }
+
+  .slider-page__control {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -10553,7 +10622,22 @@ body.modal-open .mm-slideout {
     width: 100%;
   }
 
+  .footer__info-column--1 {
+    visibility: hidden;
+    display: none;
+  }
+
+  .footer__info-column--2 {
+    visibility: hidden;
+    display: none;
+  }
+
   .footer__logo {
+    visibility: hidden;
+    display: none;
+  }
+
+  .footer__logo-2 {
     visibility: hidden;
     display: none;
   }
