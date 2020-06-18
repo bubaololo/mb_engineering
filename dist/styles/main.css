@@ -10216,6 +10216,10 @@ body.modal-open .mm-slideout {
     margin-bottom: 1.25rem;
   }
 
+  .slider-front {
+    margin-bottom: 1.25rem;
+  }
+
   .slider-front__ill {
     display: none;
   }
@@ -10240,6 +10244,10 @@ body.modal-open .mm-slideout {
   .slider-front__btn {
     height: 100px;
     width: 56px;
+  }
+
+  .slider-page {
+    margin-bottom: 1.25rem;
   }
 
   .slider-page__content {

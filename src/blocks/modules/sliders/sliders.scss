@@ -1,5 +1,8 @@
 .slider-front {
 	margin-bottom: rem(95px);
+	@include r(1200) {
+		margin-bottom: rem(20px);
+	}
 	&__slide {
 		display: flex;
 		justify-content: space-between;
@@ -251,6 +254,9 @@
 
 .slider-page {
 	margin-bottom: rem(95px);
+	@include r(1200) {
+		margin-bottom: rem(20px);
+	}
 	&__slide {
 		display: flex;
 		justify-content: space-between;
