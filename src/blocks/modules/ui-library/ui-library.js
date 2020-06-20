@@ -124,5 +124,21 @@ function ready() {
 			})
 		}
 	})();
+
+	// Скролл наверх
+
+
+	(function scrollTop() {
+		const btn = document.querySelector('.footer__to-top');
+
+		if (btn) {
+			btn.addEventListener('click', function() {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
+			})
+		}
+	})();
 }
 

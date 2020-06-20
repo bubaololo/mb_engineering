@@ -39,7 +39,7 @@
 	}
 	&__container {
 		&-top {
-			
+			position: relative;
 		}
 		&-bottom {
 			display: flex;
@@ -253,6 +253,34 @@
 	&__btn-profile {
 		width: 100%;
 		max-width: 400px;
+	}
+	&__to-top {
+		background: none;
+		transition: 0.3s all;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		border: none;
+		display: block;
+		cursor: pointer;
+		top: -210px;
+		right: -120px;
+		@include r(1500) {
+			right: 0px;
+			top: -180px;
+		}
+		@include r(1200) {
+			right: 0px;
+			top: -15px;
+		}
+		svg {
+			display: block;
+			width: 57px;
+			height: 57px;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 }
 

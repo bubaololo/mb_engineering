@@ -1184,6 +1184,20 @@ function ready() {
         list.classList.add('books--cards');
       });
     }
+  })(); // Скролл наверх
+
+
+  (function scrollTop() {
+    var btn = document.querySelector('.footer__to-top');
+
+    if (btn) {
+      btn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    }
   })();
 }
 
