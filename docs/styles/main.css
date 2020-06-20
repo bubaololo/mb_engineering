@@ -6283,6 +6283,7 @@ img.mfp-img {
   cursor: pointer;
   top: -210px;
   right: -120px;
+  z-index: 2;
 }
 
 .footer__to-top svg {

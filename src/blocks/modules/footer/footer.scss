@@ -265,6 +265,7 @@
 		cursor: pointer;
 		top: -210px;
 		right: -120px;
+		z-index: 2;
 		@include r(1500) {
 			right: 0px;
 			top: -180px;
