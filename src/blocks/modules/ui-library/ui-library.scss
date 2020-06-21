@@ -1106,7 +1106,11 @@
 	&--dark {
 		.drop-card {
 			&--accent {
-
+				
+				.drop-card__header {
+					border: 1px solid $light;
+					border-radius: 5px;
+				}
 			}
 			&--dark {
 				.drop-card__header {
@@ -2474,6 +2478,11 @@
 		
 	}
 	&--dark {
-		
+		.accordeon {
+			&__block {
+				background-color: $black;
+				border: 1px solid $light;
+			}
+		}
 	}
 }

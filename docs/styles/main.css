@@ -3234,6 +3234,11 @@ img.mfp-img {
   visibility: visible;
 }
 
+.body--dark .drop-card--accent .drop-card__header {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
 .body--dark .drop-card--dark .drop-card__header {
   background-color: #000000;
 }
@@ -4325,6 +4330,11 @@ img.mfp-img {
   flex-shrink: 0;
   margin-left: 3px;
   margin-right: 3px;
+}
+
+.body--dark .accordeon__block {
+  background-color: #000000;
+  border: 1px solid #ffffff;
 }
 
 .progress {
