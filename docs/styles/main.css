@@ -6103,6 +6103,19 @@ img.mfp-img {
   border-bottom: 2px solid #ffffff;
 }
 
+.accent-line {
+  background-color: #E04E39;
+  color: #ffffff;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.accent-line__container {
+  display: block;
+}
+
 .footer {
   color: #ffffff;
 }

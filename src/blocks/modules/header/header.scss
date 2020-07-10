@@ -243,3 +243,21 @@
 		}
 	}
 }
+
+.accent-line {
+	background-color: $red;
+	color: $light;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	font-weight: 500;
+	font-size: 16px;
+	@include r(1200) {
+
+	}
+	&__container {
+		display: block;
+	}
+	&__content {
+		
+	}
+}
