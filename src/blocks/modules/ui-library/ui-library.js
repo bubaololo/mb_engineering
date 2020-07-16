@@ -140,5 +140,24 @@ function ready() {
 			})
 		}
 	})();
+
+	(function fixedTopBtn() {
+		let btn = document.querySelector('.footer__to-top');
+
+		if (btn) {
+			window.addEventListener('scroll', toggleBtn);
+		}
+
+		function toggleBtn() {
+			if (pageYOffset > 3000) {
+				btn.classList.add('footer__to-top--visible');
+			} else {
+				btn.classList.remove('footer__to-top--visible');
+			}
+		}
+
+		toggleBtn();
+
+	})();
 }
 

@@ -21,7 +21,7 @@
 			opacity: 0;
 		}
 	}
-	&__field {
+	&__field, input {
 		display: block;
 		height: 10px;
 		width: 10px;
@@ -96,9 +96,10 @@
 	&__title {
 		font-weight: 300;
 		font-size: rem(16px);
+		width: 100%;
 		line-height: rem(35px);
 	}
-	&__field {
+	&__field, input, textarea {
 		border: 1px solid #D1D9DD;
 		box-sizing: border-box;
 		border-radius: 5px;
@@ -111,9 +112,20 @@
 		font-size: rem(18px);
 		padding-left: rem(10px);
 		padding-right: rem(10px);
+		resize: none;
 		&:focus {
 			border-color: $accent;
 		}
+		&--select {
+			display: flex;
+			align-items: center;
+		}
+		// &:read-only {
+			
+		// }
+	}
+	input:read-only {
+		background-color: #eff2f3;	
 	}
 }
 
@@ -198,5 +210,53 @@
 	}
 	&--dark {
 		
+	}
+}
+
+#captchaBlock {
+	margin-bottom: rem(28px);
+	display: block;
+	width: calc(50% - 24px);
+	display: flex;
+	flex-wrap: wrap;
+	@include r(1200) {
+		width: 100%;
+	}
+	@include r(750) {
+		margin-bottom: rem(20px);
+	}
+	img {
+		margin-bottom: 10px;
+		display: block;
+	}
+	.reload-captcha {
+		padding: 10px 20px;
+		border: 1px solid $accent;
+		margin-left: 0px;
+		display: inline-block;
+		border-radius: 5px;
+		margin-bottom: 10px;
+	}
+	input {
+		border: 1px solid #D1D9DD;
+		box-sizing: border-box;
+		border-radius: 5px;
+		display: block;
+		width: 100%;
+		height: 50px;
+		font-family: $font;
+		outline-color: $accent;
+		margin-bottom: rem(5px);
+		font-size: rem(18px);
+		padding-left: rem(10px);
+		padding-right: rem(10px);
+		resize: none;
+		width: 100%;
+		@include r(1200) {
+			width: 100%;
+		}
+		&:focus {
+			border-color: $accent;
+		}
 	}
 }

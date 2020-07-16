@@ -172,8 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-document.addEventListener("DOMContentLoaded", ready);
+ // document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
   var linkAll = '../events-all.json';
@@ -182,10 +181,7 @@ function ready() {
   var linkPresent = '../events-present.json';
 
   function initCalendar(linkType) {
-    var calendarItem = document.querySelector('.calendar'); // if (calendarArrow) {
-    // 	for(let i = 0; i < calendarArrow.length; i++) {
-    // 	}
-    // }
+    var calendarItem = document.querySelector('.calendar');
 
     if (calendarItem) {
       var checkType = function checkType() {
@@ -274,10 +270,15 @@ function ready() {
 /*!*****************************************!*\
   !*** ./src/blocks/modules/form/form.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(jQuery, $) {function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(jQuery, $) {/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 
 "undefined" != typeof jQuery && function (c) {
   function u(e, t, i) {
@@ -686,6 +687,49 @@ function ready() {
     dropdown: true,
     scrollbar: true
   });
+  window.initChoices = {
+    init: function initChoices() {
+      var inputs = document.querySelectorAll('.inputselect');
+
+      for (var i = 0; i < inputs.length; i++) {
+        new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(inputs[i], {
+          loadingText: 'Загрузка...',
+          // noResultsText: 'No results found',
+          // noChoicesText: 'No choices to choose from',
+          itemSelectText: 'Кликните, чтобы выбрать',
+          classNames: {
+            containerOuter: 'choices',
+            containerInner: 'input__field input__field--select',
+            input: 'choices__input',
+            inputCloned: 'choices__input--cloned',
+            list: 'choices__list',
+            listItems: 'choices__list--multiple',
+            listSingle: 'choices__list--single',
+            listDropdown: 'choices__list--dropdown',
+            item: 'choices__item',
+            itemSelectable: 'choices__item--selectable',
+            itemDisabled: 'choices__item--disabled',
+            itemChoice: 'choices__item--choice',
+            placeholder: 'choices__placeholder',
+            group: 'choices__group',
+            groupHeading: 'choices__heading',
+            button: 'choices__button',
+            activeState: 'is-active',
+            focusState: 'is-focused',
+            openState: 'is-open',
+            disabledState: 'is-disabled',
+            highlightedState: 'is-highlighted',
+            selectedState: 'is-selected',
+            flippedState: 'is-flipped',
+            loadingState: 'is-loading',
+            noResults: 'has-no-results',
+            noChoices: 'has-no-choices'
+          }
+        });
+      }
+    }
+  };
+  initChoices.init(); // ()();
 })();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -1199,6 +1243,24 @@ function ready() {
       });
     }
   })();
+
+  (function fixedTopBtn() {
+    var btn = document.querySelector('.footer__to-top');
+
+    if (btn) {
+      window.addEventListener('scroll', toggleBtn);
+    }
+
+    function toggleBtn() {
+      if (pageYOffset > 3000) {
+        btn.classList.add('footer__to-top--visible');
+      } else {
+        btn.classList.remove('footer__to-top--visible');
+      }
+    }
+
+    toggleBtn();
+  })();
 }
 
 /***/ }),
@@ -1225,7 +1287,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_1_map_map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/1_map/map */ "./src/blocks/modules/1_map/map.js");
 /* harmony import */ var _modules_1_map_map__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_1_map_map__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/form/form */ "./src/blocks/modules/form/form.js");
-/* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_form_form__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/modal/modal */ "./src/blocks/modules/modal/modal.js");
 /* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/1_events/events */ "./src/blocks/modules/1_events/events.js");
 // Плагины

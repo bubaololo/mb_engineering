@@ -3,7 +3,7 @@ import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import ruLocale from '@fullcalendar/core/locales/ru';
 
-document.addEventListener("DOMContentLoaded", ready);
+// document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
 	const linkAll = '../events-all.json';
@@ -14,12 +14,6 @@ function ready() {
 	function initCalendar(linkType) {
 
 		const calendarItem = document.querySelector('.calendar');
-
-		// if (calendarArrow) {
-		// 	for(let i = 0; i < calendarArrow.length; i++) {
-
-		// 	}
-		// }
 
 		if (calendarItem) {
 			let calendar = new Calendar(calendarItem, {

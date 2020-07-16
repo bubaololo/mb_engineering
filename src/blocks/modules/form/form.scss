@@ -12,6 +12,9 @@
 		border: none;
 		background-image: none;
 	}
+	&--event {
+		margin-bottom: 50px;
+	}
 	@include r(750) {
 		padding: rem(25px);
 	}
@@ -67,11 +70,23 @@
 		margin-right: rem(50px);
 	}
 	&__accept {
+		margin-bottom: 15px;
 		@include r(1200) {
 			width: 100%;
 			order: -1;
 			margin-bottom: rem(20px);
 		}
+		&--bitrix {
+			
+		}
+	}
+	&__clear {
+		display: block;
+		height: 0px;
+		width: 100%;
+		border: none;
+		visibility: hidden;
+		margin: 0px;
 	}
 }
 
