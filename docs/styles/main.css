@@ -10459,6 +10459,7 @@ body.modal-open .mm-slideout {
 
   .table {
     margin-bottom: 1.875rem;
+    overflow-x: scroll;
   }
 
   .input {

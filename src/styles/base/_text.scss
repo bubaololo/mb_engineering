@@ -185,6 +185,7 @@
 	margin-bottom: rem(50px);
 	@include r(1200) {
 		margin-bottom: rem(30px);
+		overflow-x: scroll; 
 	}
 	&__discript {
 		font-size: 14px;
