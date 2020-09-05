@@ -5621,7 +5621,6 @@ img.mfp-img {
 .gallery__item {
   width: calc(50% - 10px);
   height: 355px;
-  background-color: red;
   display: block;
   background-size: cover;
   background-position: center;
@@ -11676,6 +11675,22 @@ body.modal-open .mm-slideout {
     transform: rotate(90deg);
   }
 
+  .gallery__item {
+    width: calc(50% - 10px);
+  }
+
+  .gallery__item--4 {
+    width: calc(50% - 10px);
+  }
+
+  .gallery__item--8 {
+    width: calc(50% - 10px);
+  }
+
+  .gallery__text {
+    max-height: 1000px;
+  }
+
   .header__topline-right {
     width: auto;
   }
@@ -12189,6 +12204,31 @@ body.modal-open .mm-slideout {
   }
 
   .step-link--4 {
+    width: 100%;
+  }
+
+  .video-section {
+    display: block;
+  }
+
+  .video-section__content {
+    width: 100%;
+    margin-bottom: 1.875rem;
+  }
+
+  .video-section__video {
+    width: 100%;
+  }
+
+  .gallery__item {
+    width: 100%;
+  }
+
+  .gallery__item--4 {
+    width: 100%;
+  }
+
+  .gallery__item--8 {
     width: 100%;
   }
 
