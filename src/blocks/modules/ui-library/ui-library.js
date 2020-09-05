@@ -1,3 +1,5 @@
+import fancybox from '@fancyapps/fancybox';
+
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
