@@ -1098,6 +1098,22 @@ __webpack_require__.r(__webpack_exports__);
   });
 })();
 
+(function () {
+  var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-cluster', {
+    autoHeight: true,
+    pagination: {
+      el: '.slider-cluster__pagination',
+      bulletClass: 'slider-cluster__bullet',
+      bulletActiveClass: 'slider-cluster__bullet--active'
+    },
+    navigation: {
+      nextEl: '.slider-cluster__btn--next',
+      prevEl: '.slider-cluster__btn--prev',
+      disabledClass: 'slider-cluster__btn--disabled'
+    }
+  });
+})();
+
 /***/ }),
 
 /***/ "./src/blocks/modules/ui-library/ui-library.js":
