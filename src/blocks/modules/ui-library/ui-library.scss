@@ -89,6 +89,10 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
+	&--fixed {
+		width: 250px;
+		max-width: 100%;
+	}
 	svg + span {
 		margin-left: rem(10px);
 	}

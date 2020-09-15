@@ -3671,6 +3671,11 @@ img.mfp-img {
   padding-right: 30px;
 }
 
+.btn--fixed {
+  width: 250px;
+  max-width: 100%;
+}
+
 .btn svg + span {
   margin-left: 0.625rem;
 }
