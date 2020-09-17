@@ -2524,6 +2524,7 @@
 	margin-bottom: 3.125rem;
 	background-color: #F7F9FA;
 	border-radius: 5px;
+	text-align: center;
 	@include r(750) {
 		padding: 20px 20px;
 	}
@@ -2536,6 +2537,7 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
+		justify-content: center;
 		@include r(1200) {
 			display: block;
 		}
@@ -2544,10 +2546,12 @@
 		display: flex;
 		align-items: center;
 		color: $black;
-		margin-right: 70px;
+		margin-right: 35px;
+		margin-left: 35px;
 		margin-bottom: 10px;
 		text-decoration: none;
-		&:last-of-type {
+		@include r(1200) {
+			margin-left: 0px;
 			margin-right: 0px;
 		}
 		&:hover {

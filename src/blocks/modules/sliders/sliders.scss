@@ -416,14 +416,18 @@
 		}
 	}
 	&__slide {
-		height: 606px;
 		position: relative;
 		color: $light;
 		text-decoration: none;
 		overflow: hidden;
 		border-radius: 5px;
-		@include r(1200) {
-			height: auto;
+		display: block;
+		height: auto;
+		&--fixed {
+			height: 606px;
+			@include r(1200) {
+				height: auto;
+			}
 		}
 	}
 	&__thumb {
