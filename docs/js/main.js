@@ -159,86 +159,10 @@
 /*!***********************************************!*\
   !*** ./src/blocks/modules/1_events/events.js ***!
   \***********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.esm.js");
-/* harmony import */ var _fullcalendar_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/list */ "./node_modules/@fullcalendar/list/main.esm.js");
-/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.esm.js");
-/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fullcalendar/core/locales/ru */ "./node_modules/@fullcalendar/core/locales/ru.js");
-/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3__);
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 
-
- // document.addEventListener("DOMContentLoaded", ready);
-
-function ready() {
-  var linkAll = '../events-all.json';
-  var linkMission = '../events-mission.json';
-  var linkLearn = '../events-learn.json';
-  var linkPresent = '../events-present.json';
-
-  function initCalendar(linkType) {
-    var calendarItem = document.querySelector('.calendar');
-
-    if (calendarItem) {
-      var checkType = function checkType() {
-        if (document.documentElement.clientWidth > 1200) {
-          return 'dayGridMonth';
-        } else {
-          return 'listWeek';
-        }
-      };
-
-      var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarItem, {
-        plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_1__["default"]],
-        defaultView: checkType(),
-        locale: _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_3___default.a,
-        weekNumberCalculation: 'ISO',
-        contentHeight: 'auto',
-        header: {
-          left: 'prev, title, next',
-          center: '',
-          right: 'today'
-        },
-        events: linkType,
-        windowResize: function windowResize(view) {
-          if (document.documentElement.clientWidth > 1200) {
-            this.changeView('dayGridMonth');
-          } else {
-            this.changeView('listWeek');
-          }
-        }
-      });
-      calendar.render();
-
-      (function toggleType() {
-        var btnMounth = document.querySelector('.tabs__btn--mounth');
-        var btnWeek = document.querySelector('.tabs__btn--week');
-
-        if (btnMounth && btnWeek) {
-          btnMounth.addEventListener('click', function (e) {
-            e.preventDefault();
-            btnWeek.classList.remove('tabs__btn--active');
-            this.classList.add('tabs__btn--active');
-            calendar.changeView('dayGridMonth');
-          });
-          btnWeek.addEventListener('click', function (e) {
-            e.preventDefault();
-            btnMounth.classList.remove('tabs__btn--active');
-            this.classList.add('tabs__btn--active');
-            calendar.changeView('listWeek');
-          });
-        }
-      })();
-    }
-  }
-
-  ;
-  initCalendar(linkAll);
-}
 
 /***/ }),
 
@@ -252,6 +176,110 @@ function ready() {
 (function () {
   console.log('Карта');
 })();
+
+/***/ }),
+
+/***/ "./src/blocks/modules/event/event.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/event/event.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_0__);
+window.addEventListener('load', setCalendar);
+
+
+function setCalendar() {
+  $('#calendar-select').datepicker({
+    range: true,
+    onSelect: function onSelect() {
+      changeCalendar();
+    }
+  });
+  var toolbar = document.querySelector('.calendar__header');
+
+  if (toolbar) {
+    var type = toolbar.elements['event-type'];
+    var date = toolbar.elements['calendar-type'];
+    type.addEventListener('change', changeCalendar); // date.addEventListener('input', changeCalendar);
+  }
+
+  function changeCalendar(type, date) {
+    $('.calendar__toolbar').show();
+    var articles = document.querySelector('.calendar__content');
+    var dateNowOptions = {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      timezone: 'UTC'
+    };
+    var dateNow = new Date().toLocaleString("ru", dateNowOptions);
+    var dateIncilOptions = {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      timezone: 'UTC'
+    };
+    var dateIncil = new Date();
+    dateIncil.setDate(dateIncil.getDate() + 364);
+    var dateFinal = dateIncil.toLocaleString("ru", dateNowOptions);
+    var dateStart = toolbar.elements['calendar-type'].value.split(',')[0] || dateNow;
+    var dateEnd = toolbar.elements['calendar-type'].value.split(',')[1] || dateFinal;
+    $.ajax({
+      url: '/ajax/eventslist.php',
+      data: {
+        count: '',
+        type: toolbar.elements['event-type'].value,
+        datafrom: dateStart,
+        dataincil: dateEnd
+      },
+      type: 'GET',
+      success: function success(data) {
+        console.log('От ' + dateStart + ' до ' + dateEnd);
+        articles.innerHTML = data + '<div class="calendar-cart calendar-cart--clear"></div><div class="calendar-cart calendar-cart--clear"></div><div class="calendar-cart calendar-cart--clear"></div>';
+      }
+    });
+  }
+
+  var counter = 0;
+  $('.calendar #load-more').click(function (e) {
+    e.preventDefault(); // let dateStart = toolbar.elements['calendar-type'].value.split(',')[0] || '01.01.2019';
+    // let dateEnd = toolbar.elements['calendar-type'].value.split(',')[1] || '01.01.2025';
+
+    var dateStart = toolbar.elements['calendar-type'].value.split(',')[0] || false;
+    var dateEnd = toolbar.elements['calendar-type'].value.split(',')[1] || false;
+    var btn = this;
+    var position = window.pageYOffset;
+    $(btn).find('span').text('Загрузка...');
+    $.ajax({
+      url: '/ajax/eventslist.php',
+      data: {
+        count: 20 + counter * 8,
+        type: toolbar.elements['event-type'].value,
+        datafrom: dateStart,
+        dataincil: dateEnd
+      },
+      type: 'GET',
+      success: function success(data) {
+        if (data.length > 150) {
+          counter++;
+          $('.calendar__content').find('.calendar-cart--clear').first().before(data);
+          $(btn).find('span').text('Загрузить еще');
+        } else {
+          $(btn).find('span').text('Загрузить еще');
+          $('.calendar__toolbar').hide();
+        }
+
+        window.scrollTo(0, position);
+      }
+    });
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -1307,11 +1335,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_1_map_map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/1_map/map */ "./src/blocks/modules/1_map/map.js");
 /* harmony import */ var _modules_1_map_map__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_1_map_map__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/form/form */ "./src/blocks/modules/form/form.js");
-/* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/modal/modal */ "./src/blocks/modules/modal/modal.js");
-/* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/1_events/events */ "./src/blocks/modules/1_events/events.js");
+/* harmony import */ var _modules_event_event__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/event/event */ "./src/blocks/modules/event/event.js");
+/* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/modal/modal */ "./src/blocks/modules/modal/modal.js");
+/* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/1_events/events */ "./src/blocks/modules/1_events/events.js");
+/* harmony import */ var _modules_1_events_events__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_1_events_events__WEBPACK_IMPORTED_MODULE_10__);
 // Плагины
 // import $ from 'jquery';
 // Блоки
+
 
 
 

@@ -75,11 +75,14 @@
 	}
 	ol {
 		list-style-type: decimal;
-		color: $red;
+		// color: $red;
 		list-style-position: inside;
 		li {
 			margin-bottom: 1em;
-			font-weight: bold;
+			// font-weight: bold;
+			&::maker {
+				font-weight: bold;
+			}
 		}
 		span {
 			font-weight: 300;

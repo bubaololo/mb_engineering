@@ -13,6 +13,38 @@
 			width: 100%;
 		}
 	}
+	&__arrow {
+		background-size: 100% 100%;
+		display: block;
+		width: calc(100% - 60px);
+		color: $light;
+		font-weight: 500;
+		padding: 20px 40px;
+		background-color: $red;
+		margin-bottom: 30px;
+		margin-right: 50px;
+		position: relative;
+		min-height: 76px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@include r(1200) {
+			width: 100%;
+		}
+		&:after {
+			content: "";
+			left: 100%;
+			top: 0px;
+			bottom: 0px;
+			width: 50px;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-image: url('../img/block-arrow.svg');
+			@include r(1200) {
+				display: none;
+			}
+		}
+	}
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -89,6 +121,15 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
+	&--light {
+		background-color: $light;
+		width: fit-content;
+		padding-left: 46px;
+		padding-right: 46px;
+		span {
+			color: $red;
+		}
+	}
 	&--fixed {
 		width: 250px;
 		max-width: 100%;
@@ -98,6 +139,10 @@
 	}
 	span + svg {
 		margin-left: rem(10px);
+	}
+	svg {
+		width: 22px;
+		height: 22px;
 	}
 }
 
@@ -291,6 +336,9 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		max-width: 100%;
+		&--small {
+			font-size: 36px;
+		}
 		strong {
 			color: $red;
 		}
@@ -671,6 +719,9 @@
 	}
 	@include r(750) {
 		width: calc(100%);
+	}
+	&--50 {
+		width: calc(50% - 10px);
 	}
 	&--dark {
 		background-color: #F7F9FA;
@@ -1357,6 +1408,9 @@
 	@include r(1200) {
 		width: 100%;
 		padding: rem(25px);
+	}
+	&--light {
+		background-color: $light;
 	}
 	&--clear {
 		margin-bottom: 0px;
@@ -2691,6 +2745,164 @@
 				background-color: $black;
 				border: 1px solid $light;
 			}
+		}
+	}
+}
+
+.contest-block {
+	background-color: $red;
+	color: $light;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	padding: 50px;
+	margin-bottom: 1.25rem;
+	background-size: 100% auto;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include r(1200) {
+		padding: 25px;
+	}
+	&__thumb {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		padding: 40px 50px 30px 30px;
+		img {
+			display: block;
+			width: 268px;
+			height: 349px;
+		}
+		@include r(1200) {
+			display: none;
+		}
+	}
+	&__content {
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: center;
+		padding: 30px;
+		@include r(1200) {
+			padding: 15px;
+			width: 100%;
+		}
+	}
+	&__discript {
+		margin-bottom: 10px;
+		font-size: 24px;
+		@include r(1200) {
+			font-size: 18px;
+		}
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 48px;
+		margin-bottom: 40px;
+		line-height: 1.1;
+		@include r(1200) {
+			font-size: 22px;
+		}
+	}
+	&__text {
+		margin-bottom: 30px;
+	}
+	&__btn {
+		padding-left: 46px;
+		padding-right: 46px;
+	}
+}
+
+.download-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: $light;
+	text-decoration: none;
+	min-height: 274px;
+	width: calc(50% - 10px);
+	border-radius: 5px;
+	overflow: hidden;
+	background-size: cover;
+	padding: 55px;
+	margin-bottom: 20px;
+	@include r(1200) {
+		width: 100%;
+		padding: 35px 20px;
+		min-height: 50px;
+	}
+	&:hover {
+		opacity: 0.7;
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 24px;
+		@include r(1200) {
+			margin-bottom: 20px;
+		}
+	}
+	&__discript {
+		font-weight: 500;
+		text-decoration: underline;
+	}
+}
+
+.body {
+	&--light {
+		
+	}
+	&--dark {
+
+	}
+}
+
+.table-flex {
+	padding: 46px 59px;
+	border-radius: 5px;
+	@include r(1200) {
+		padding: 0px 20px;
+	}
+	&--light {
+		background-color: $light;
+	}
+	&__line {
+		border-bottom: 1px solid #D1D9DD;
+		display: flex;
+		@include r(1200) {
+			display: block;
+		}
+		&:last-child {
+			border: none;
+		}
+		&--head {
+
+		}
+	}
+	&__row {
+		border-right: 1px solid #D1D9DD;
+		padding: 35px 48px 35px 60px;
+		@include r(1200) {
+			width: 100%;
+			border: none;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		&:first-child {
+			padding: 35px 48px 35px 0px;
+			@include r(1200) {
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		}
+		&:last-child {
+			border: none;
+		}
+		&--3 {
+			width: calc(100% / 10 * 3);
+		}
+		&--7 {
+			width: calc(100% / 10 * 7);
 		}
 	}
 }

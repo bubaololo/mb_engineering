@@ -13,7 +13,19 @@
 			@@include("../blocks/modules/1_stories/stories.html")
 			@@include("../blocks/modules/1_factoid/factoid.html")
 			@@include("../blocks/modules/1_news/news.html")
-			@@include("../blocks/modules/1_events/events.html")
+			<section class="front-events">
+				<div class="container front-events__container">
+					<h2 class="title title--line front-events__title">
+						<span class="title__text">Мероприятия</span>
+						<a href="" class="btn btn--60 title__btn">
+							<span>
+								Смотреть все
+							</span>
+						</a>
+					</h2>
+					@@include("../blocks/modules/1_events/events.html")
+				</div>
+			</section>
 			@@include("../blocks/modules/1_slider/slider.html")
 			@@include("../blocks/modules/1_partners/partners.html")
 			@@include("../blocks/modules/1_map/map.html")
