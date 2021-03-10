@@ -7,6 +7,7 @@
 	background-repeat: no-repeat;
 	background-position: calc(100% - 60px) 30px;
 	background-color: $light;
+	position: relative;
 	&--modal {
 		padding: 0px;
 		border: none;
@@ -14,6 +15,54 @@
 	}
 	&--event {
 		margin-bottom: 50px;
+	}
+	&--send {
+		.form__message {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__message {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: $light;
+		align-items: center;
+		transition: 0.3s opacity;
+		text-align: center;
+		opacity: 0;
+		visibility: hidden;
+		&-icon {
+			width: 72px;
+			height: 72px;
+			margin-bottom: 32px;
+			@include r(750) {
+				width: 42px;
+				height: 42px;
+				margin-bottom: 22px;
+			}
+		}
+		&-title {
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			font-size: 32px;
+			@include r(750) {
+				font-size: 24px;
+				margin-bottom: 16px;			
+			}
+		}
+		&-discript {
+			font-size: 18px;
+			@include r(750) {
+				font-size: 14px;			
+			}
+		}
 	}
 	@include r(750) {
 		padding: rem(25px);

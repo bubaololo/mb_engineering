@@ -7932,6 +7932,7 @@ img.mfp-img {
   background-repeat: no-repeat;
   background-position: calc(100% - 60px) 30px;
   background-color: #ffffff;
+  position: relative;
 }
 
 .form--modal {
@@ -7942,6 +7943,45 @@ img.mfp-img {
 
 .form--event {
   margin-bottom: 50px;
+}
+
+.form--send .form__message {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  align-items: center;
+  transition: 0.3s opacity;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form__message-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 32px;
+}
+
+.form__message-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.form__message-discript {
+  font-size: 18px;
 }
 
 .form__head-text {
@@ -13688,6 +13728,21 @@ body.modal-open .mm-slideout {
   .footer__logo-2 {
     visibility: hidden;
     display: none;
+  }
+
+  .form__message-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 22px;
+  }
+
+  .form__message-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .form__message-discript {
+    font-size: 14px;
   }
 
   .form {
