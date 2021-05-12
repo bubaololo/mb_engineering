@@ -186,6 +186,12 @@
 
 .table {
 	margin-bottom: rem(50px);
+	&--normal {
+		table {
+			width: 100%;
+			table-layout: fixed;
+		}
+	}
 	@include r(1200) {
 		margin-bottom: rem(30px);
 		overflow-x: scroll; 
@@ -207,9 +213,9 @@
 		color: $light;
 		text-align: center;
 		vertical-align: middle;
-		&:first-child {
-			min-width: rem(100px);
-		}
+		// &:first-child {
+		// 	min-width: rem(100px);
+		// }
 	}
 	th, td {
 		padding: rem(26px) rem(20px);
@@ -219,8 +225,48 @@
 		font-weight: bold;
 	}
 	ul {
-		list-style-type: disc;
+		margin-bottom: 1.5em;
+		@include r(1200) {
+			margin-bottom: 1em;
+		}
+		li {
+			position: relative;
+			padding-left: rem(32px);
+			margin-bottom: 1em;
+			@include r(1200) {
+				padding-left: rem(22px);
+			}
+			&:before {
+				width: 17px;
+				height: 1px;
+				background-color: $accent;
+				display: block;
+				position: absolute;
+				left: 0px;
+				content: "";
+				top: 0.5em;
+				@include r(1200) {
+					width: rem(12px);
+				}
+			}
+		}
+	}
+	ol {
+		list-style-type: decimal;
+		// color: $red;
 		list-style-position: inside;
+		li {
+			margin-bottom: 1em;
+			// font-weight: bold;
+			&::maker {
+				font-weight: bold;
+			}
+		}
+		span {
+			font-weight: 300;
+			color: $black;
+			padding-left: 12px;
+		}
 	}
 }
 
