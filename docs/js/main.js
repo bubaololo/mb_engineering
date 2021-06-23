@@ -834,6 +834,16 @@ __webpack_require__.r(__webpack_exports__);
   });
 })();
 
+(function initMobileMMenu() {
+  var menuArray = mobileLinks || null;
+  new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]("#mmenu-m", {
+    "extensions": ["pagedim-black"],
+    "navbar": {
+      "title": "Микрокредитование"
+    }
+  });
+})();
+
 /***/ }),
 
 /***/ "./src/blocks/modules/modal/modal.js":
@@ -955,7 +965,10 @@ $(document).ready(function () {
 
     localStorage.setItem("images", 'true');
     localVarImage = localStorage.getItem("images");
-    btn.innerHTML = '<span>Выключить изображения</span>';
+
+    if (btn) {
+      btn.innerHTML = '<span>Выключить изображения</span>';
+    }
   }
 
   function disableImages() {
@@ -1301,10 +1314,12 @@ function ready() {
     }
 
     function toggleBtn() {
-      if (pageYOffset > 3000) {
-        btn.classList.add('footer__to-top--visible');
-      } else {
-        btn.classList.remove('footer__to-top--visible');
+      if (btn) {
+        if (pageYOffset > 3000) {
+          btn.classList.add('footer__to-top--visible');
+        } else {
+          btn.classList.remove('footer__to-top--visible');
+        }
       }
     }
 

@@ -67,7 +67,10 @@
 		}
 		localStorage.setItem("images", 'true');
 		localVarImage = localStorage.getItem("images");
-		btn.innerHTML = '<span>Выключить изображения</span>';
+
+		if (btn) {
+			btn.innerHTML = '<span>Выключить изображения</span>';
+		}
 	}
 
 	function disableImages() {

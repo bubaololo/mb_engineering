@@ -10,11 +10,11 @@ function ready() {
 
 		if (dropArrow) {
 			for (let i = 0; i < dropArrow.length; i++) {
-				dropArrow[i].addEventListener('click', function() {
+				dropArrow[i].addEventListener('click', function () {
 					this.parentNode.classList.toggle('drop-card--open');
 				})
 
-				dropArrow[i].addEventListener('keydown', function() {
+				dropArrow[i].addEventListener('keydown', function () {
 					if (event.code == 'Enter') {
 						event.preventDefault();
 						this.parentNode.classList.toggle('drop-card--open');
@@ -36,7 +36,7 @@ function ready() {
 			}
 		}
 
-		function setCustomEvent () {
+		function setCustomEvent() {
 			if (event.code == 'Space') {
 				event.preventDefault();
 				this.querySelector('input').checked = true;
@@ -56,15 +56,15 @@ function ready() {
 			}
 		}
 
-		function setCustomEvent () {
+		function setCustomEvent() {
 			if (event.code == 'Space') {
 				event.preventDefault();
-				if (this.querySelector('input'). checked == true) {
+				if (this.querySelector('input').checked == true) {
 					this.querySelector('input').checked = false;
 				} else {
 					this.querySelector('input').checked = true;
 				}
-				
+
 			}
 		}
 
@@ -81,18 +81,18 @@ function ready() {
 				let tabs = units[n].querySelectorAll('.tabs__link');
 				let blocks = units[n].querySelectorAll('.units__block');
 
-				for(let z = 0; z < tabs.length; z++) {
-					tabs[z].addEventListener('click', function (e){
+				for (let z = 0; z < tabs.length; z++) {
+					tabs[z].addEventListener('click', function (e) {
 						e.preventDefault();
 						console.log(z);
 						select(tabs, blocks, z);
 					});
 				}
-				
+
 			}
 		}
 
-		function select (tabs, blocks, n) {
+		function select(tabs, blocks, n) {
 			for (let m = 0; m < tabs.length; m++) {
 				tabs[m].classList.remove('tabs__link--active');
 				blocks[m].classList.remove('units__block--active');
@@ -111,14 +111,14 @@ function ready() {
 		const list = document.querySelector('.books');
 
 		if (btnList && btnCards && list) {
-			btnList.addEventListener('click', function(e) {
+			btnList.addEventListener('click', function (e) {
 				btnCards.classList.remove('tab-btns__btn--active');
 				this.classList.add('tab-btns__btn--active');
 				e.preventDefault();
 				list.classList.remove('books--cards');
 			});
 
-			btnCards.addEventListener('click', function(e) {
+			btnCards.addEventListener('click', function (e) {
 				btnList.classList.remove('tab-btns__btn--active');
 				this.classList.add('tab-btns__btn--active');
 				e.preventDefault();
@@ -134,7 +134,7 @@ function ready() {
 		const btn = document.querySelector('.footer__to-top');
 
 		if (btn) {
-			btn.addEventListener('click', function() {
+			btn.addEventListener('click', function () {
 				window.scrollTo({
 					top: 0,
 					behavior: "smooth"
@@ -151,10 +151,13 @@ function ready() {
 		}
 
 		function toggleBtn() {
-			if (pageYOffset > 3000) {
-				btn.classList.add('footer__to-top--visible');
-			} else {
-				btn.classList.remove('footer__to-top--visible');
+
+			if (btn) {
+				if (pageYOffset > 3000) {
+					btn.classList.add('footer__to-top--visible');
+				} else {
+					btn.classList.remove('footer__to-top--visible');
+				}
 			}
 		}
 

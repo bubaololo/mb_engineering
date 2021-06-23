@@ -33974,16 +33974,16 @@ _oncanvas_mmenu_oncanvas__WEBPACK_IMPORTED_MODULE_0__["default"].configs.screenR
         this.bind('closePanel', function (panel) {
             _oncanvas_mmenu_oncanvas__WEBPACK_IMPORTED_MODULE_0__["default"].sr_aria(panel, 'hidden', true);
         });
-        //	Add aria-haspopup and aria-owns to prev- and next buttons.
-        this.bind('initPanel:after', function (panel) {
-            _modules_dom__WEBPACK_IMPORTED_MODULE_4__["find"](panel, '.mm-btn').forEach(function (button) {
-                _oncanvas_mmenu_oncanvas__WEBPACK_IMPORTED_MODULE_0__["default"].sr_aria(button, 'haspopup', true);
-                var href = button.getAttribute('href');
-                if (href) {
-                    _oncanvas_mmenu_oncanvas__WEBPACK_IMPORTED_MODULE_0__["default"].sr_aria(button, 'owns', href.replace('#', ''));
-                }
-            });
-        });
+        // //	Add aria-haspopup and aria-owns to prev- and next buttons.
+        // this.bind('initPanel:after', (panel: HTMLElement) => {
+        //     DOM.find(panel, '.mm-btn').forEach(button => {
+        //         Mmenu.sr_aria(button, 'haspopup', true);
+        //         let href = button.getAttribute('href');
+        //         if (href) {
+        //             Mmenu.sr_aria(button, 'owns', href.replace('#', ''));
+        //         }
+        //     });
+        // });
         //	Add aria-hidden for navbars in panels.
         this.bind('initNavbar:after', function (panel) {
             /** The navbar in the panel. */

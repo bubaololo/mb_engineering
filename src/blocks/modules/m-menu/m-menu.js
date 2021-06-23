@@ -22,3 +22,16 @@ import Mmenu from 'mmenu-js';
 		]
 	});
 })();
+
+(function initMobileMMenu(){
+	let menuArray = mobileLinks || null;
+
+	new Mmenu( "#mmenu-m", {
+		"extensions": [
+		"pagedim-black"
+		],
+		"navbar": {
+			"title": "Микрокредитование"
+		},
+	});
+})();
