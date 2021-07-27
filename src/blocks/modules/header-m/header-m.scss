@@ -20,7 +20,7 @@
 		}
 	}
 	&__nav {
-		margin-right: 44px;
+		margin-right: 80px;
 		display: flex;
 		justify-content: space-between;
 		flex-grow: 1;
@@ -28,7 +28,6 @@
 	&__link {
 		text-decoration: none;
 		color: $black;
-		// margin-right: 25px;
 		font-size: 14px;
 		&:last-of-type {
 			margin-right: 0;

@@ -819,29 +819,37 @@ __webpack_require__.r(__webpack_exports__);
 
 (function initMobileMenu() {
   var menuArray = mobileLinks || null;
-  new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]("#mmenu", {
-    "extensions": ["pagedim-black"],
-    "navbar": {
-      "title": "Мой Бизнес"
-    },
-    "navbars": [{
-      "position": "bottom",
-      "content": mobileContacts
-    }, {
-      "position": "bottom",
-      "content": mobileLinks
-    }]
-  });
+  var mainMenu = document.querySelector('#mmenu');
+
+  if (mainMenu) {
+    new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"](mainMenu, {
+      "extensions": ["pagedim-black"],
+      "navbar": {
+        "title": "Мой Бизнес"
+      },
+      "navbars": [{
+        "position": "bottom",
+        "content": mobileContacts
+      }, {
+        "position": "bottom",
+        "content": mobileLinks
+      }]
+    });
+  }
 })();
 
 (function initMobileMMenu() {
   var menuArray = mobileLinks || null;
-  new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]("#mmenu-m", {
-    "extensions": ["pagedim-black"],
-    "navbar": {
-      "title": "Микрокредитование"
-    }
-  });
+  var menu2 = document.querySelector('#mmenu-m');
+
+  if (menu2) {
+    new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"](menu2, {
+      "extensions": ["pagedim-black"],
+      "navbar": {
+        "title": "Микрокредитование"
+      }
+    });
+  }
 })();
 
 /***/ }),

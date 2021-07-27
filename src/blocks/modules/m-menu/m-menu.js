@@ -1,37 +1,45 @@
 import Mmenu from 'mmenu-js';
 
-(function initMobileMenu(){
+(function initMobileMenu() {
 	let menuArray = mobileLinks || null;
 
-	new Mmenu( "#mmenu", {
-		"extensions": [
-		"pagedim-black"
-		],
-		"navbar": {
-			"title": "Мой Бизнес"
-		},
-		"navbars": [
-		{
-			"position": "bottom",
-			"content": mobileContacts
-		},
-		{
-			"position": "bottom",
-			"content": mobileLinks
-		}
-		]
-	});
+	let mainMenu = document.querySelector('#mmenu');
+
+	if (mainMenu) {
+		new Mmenu(mainMenu, {
+			"extensions": [
+				"pagedim-black"
+			],
+			"navbar": {
+				"title": "Мой Бизнес"
+			},
+			"navbars": [
+				{
+					"position": "bottom",
+					"content": mobileContacts
+				},
+				{
+					"position": "bottom",
+					"content": mobileLinks
+				}
+			]
+		});
+	}
 })();
 
-(function initMobileMMenu(){
+(function initMobileMMenu() {
 	let menuArray = mobileLinks || null;
 
-	new Mmenu( "#mmenu-m", {
-		"extensions": [
-		"pagedim-black"
-		],
-		"navbar": {
-			"title": "Микрокредитование"
-		},
-	});
+	let menu2 = document.querySelector('#mmenu-m');
+
+	if (menu2) {
+		new Mmenu(menu2, {
+			"extensions": [
+				"pagedim-black"
+			],
+			"navbar": {
+				"title": "Микрокредитование"
+			},
+		});
+	}
 })();

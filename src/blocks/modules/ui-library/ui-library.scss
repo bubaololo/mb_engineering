@@ -206,6 +206,9 @@
 		flex-wrap: wrap;
 		margin-bottom: rem(30px);
 		width: 100%;
+		&--center {
+			justify-content: center;
+		}
 	}
 	&__control {
 		text-align: center;

@@ -395,6 +395,10 @@ html {
   width: 1rem;
 }
 
+.text--center {
+  text-align: center;
+}
+
 .columns {
   display: flex;
   flex-wrap: wrap;
@@ -3824,6 +3828,10 @@ img.mfp-img {
   flex-wrap: wrap;
   margin-bottom: 1.875rem;
   width: 100%;
+}
+
+.articles__content--center {
+  justify-content: center;
 }
 
 .articles__control {
@@ -7923,7 +7931,7 @@ img.mfp-img {
 }
 
 .header-m__nav {
-  margin-right: 44px;
+  margin-right: 80px;
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
