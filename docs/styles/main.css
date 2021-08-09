@@ -250,7 +250,7 @@ html {
 }
 
 .section--dark {
-  background-color: #F7F9FA;
+  background-color: #f7f9fa;
   padding-top: 5.3125rem;
   padding-bottom: 5.3125rem;
 }
@@ -307,10 +307,14 @@ html {
   margin-bottom: 1.5em;
 }
 
-.text strong,
+.text strong {
+  font-weight: bold;
+  color: #c39367;
+}
+
 .text b {
   font-weight: bold;
-  color: #C39367;
+  color: #000000;
 }
 
 .text ul {
@@ -362,6 +366,15 @@ html {
   text-decoration: none;
 }
 
+.text strong a {
+  color: #E04E39;
+  text-decoration: underline;
+}
+
+.text strong a:hover {
+  text-decoration: none;
+}
+
 .text img {
   display: block;
   margin-bottom: 1rem;
@@ -397,6 +410,10 @@ html {
 
 .text--center {
   text-align: center;
+}
+
+.body--dark b {
+  color: #ffffff;
 }
 
 .columns {
@@ -461,7 +478,7 @@ html {
 .table th,
 .table td {
   padding: 1.625rem 1.25rem;
-  border: 1px solid #D1D9DD;
+  border: 1px solid #d1d9dd;
 }
 
 .table strong,
@@ -4034,6 +4051,18 @@ img.mfp-img {
   font-weight: 300;
 }
 
+.title-card__text :last-child {
+  margin-bottom: 0;
+}
+
+.title-card__text p {
+  margin-bottom: 1rem;
+}
+
+.title-card__text strong {
+  font-weight: 600;
+}
+
 .body--dark .title-card {
   border: 1px solid #ffffff;
   background-image: none !important;
@@ -4318,6 +4347,10 @@ img.mfp-img {
   padding: 2.1875rem;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+.factoid-column--dark {
+  background-color: #f7f9fa;
 }
 
 .factoid-column--small {
@@ -5758,6 +5791,12 @@ img.mfp-img {
   text-decoration: none;
 }
 
+.adress-line__item--6 {
+  margin-left: 0;
+  margin-right: 0;
+  width: calc(50% - 10px);
+}
+
 .adress-line__item:hover {
   opacity: 0.7;
 }
@@ -6122,6 +6161,197 @@ img.mfp-img {
 
 .text-discription__text--red {
   color: #E04E39;
+}
+
+.item-prof {
+  width: calc(25% - 10px);
+  padding: 30px;
+  margin-bottom: 15px;
+}
+
+.item-prof--light {
+  background-color: #ffffff;
+}
+
+.item-prof--clear {
+  height: 0;
+  padding: 0;
+  visibility: hidden;
+  margin-bottom: 0;
+}
+
+.item-prof__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 12px;
+}
+
+.link-line {
+  border-radius: 5px;
+  padding: 33px 52px 33px 37px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.link-line--dark {
+  background-color: #ecf0f2;
+}
+
+.link-line__text {
+  padding-right: 45px;
+}
+
+.link-line__text a {
+  font-weight: 500;
+  color: #E04E39;
+}
+
+.link-line__btn {
+  flex-shrink: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.body--dark .link-line {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.card-download {
+  background-image: url("../img/cd-ill-right.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  margin-bottom: 30px;
+}
+
+.card-download:nth-child(2n) {
+  background-image: url("../img/cd-ill-left.svg");
+  background-position: left top;
+}
+
+.card-download:nth-child(2n) .card-download__main {
+  background-position: right 17% center;
+  padding-left: calc(100% / 12 * 2 - 10px);
+}
+
+.card-download--grey {
+  background-color: #f7f9fa;
+  border-radius: 5px;
+}
+
+.card-download__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 450px;
+  padding-left: calc(100% / 12 * 7 - 10px);
+  padding-right: 55px;
+  background-repeat: no-repeat;
+  background-position: left 17% center;
+}
+
+.card-download__content--logo {
+  background-size: 139px 145px;
+  padding-left: 169px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+.card-download__info {
+  margin-bottom: 5px;
+}
+
+.card-download__title {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.card-download__toolbar {
+  display: flex;
+}
+
+.card-download__btn {
+  padding-left: 38px;
+  padding-right: 38px;
+  margin-right: 20px;
+}
+
+.card-download__btn:last-of-type {
+  margin-right: 0px;
+}
+
+.card-download__btn-app {
+  display: inline-block;
+  margin-right: 20px;
+  height: 55px;
+  transition: 0.3s all;
+}
+
+.card-download__btn-app:last-of-type {
+  margin-right: 0px;
+}
+
+.card-download__btn-app:hover {
+  opacity: 0.7;
+}
+
+.card-download__btn-app img {
+  display: block;
+  height: 100%;
+}
+
+.body--dark .card-download {
+  background-color: #000000;
+  color: #ffffff;
+  background-image: none !important;
+  border: 2px solid #ffffff;
+}
+
+.body--dark .card-download__main {
+  background-image: none !important;
+}
+
+.accent-block {
+  display: flex;
+  align-items: center;
+  background-color: #ecf0f2;
+  padding: 42px 60px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.accent-block__left {
+  width: 30%;
+}
+
+.accent-block__left h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.accent-block__left h4 a {
+  color: #E04E39;
+}
+
+.accent-block__left h4 a:hover {
+  text-decoration: none;
+}
+
+.accent-block__right {
+  font-weight: 300;
+  width: 60%;
+}
+
+.body--dark .accent-block {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 
 .progress {
@@ -13239,6 +13469,11 @@ body.modal-open .mm-slideout {
     padding: 1.5625rem;
   }
 
+  .ill-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .info-card {
     display: block;
   }
@@ -13406,6 +13641,10 @@ body.modal-open .mm-slideout {
     display: block;
   }
 
+  .adress-line__item--6 {
+    width: 100%;
+  }
+
   .adress-line__item {
     margin-left: 0px;
     margin-right: 0px;
@@ -13488,6 +13727,55 @@ body.modal-open .mm-slideout {
   }
 
   .icon-fact {
+    width: 100%;
+  }
+
+  .item-prof {
+    width: calc(50% - 10px);
+  }
+
+  .link-line {
+    flex-direction: column;
+    text-align: center;
+    padding: 45px 30px;
+  }
+
+  .link-line__text {
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .card-download:nth-child(2n) .card-download__main {
+    padding-left: 35px;
+  }
+
+  .card-download__main {
+    display: block;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 0;
+    background-image: none !important;
+  }
+
+  .card-download__content--logo {
+    padding-left: 0;
+    background-image: none !important;
+  }
+
+  .accent-block {
+    display: block;
+    padding: 40px;
+    padding: 30px;
+  }
+
+  .accent-block__left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .accent-block__right {
     width: 100%;
   }
 
@@ -14302,6 +14590,33 @@ body.modal-open .mm-slideout {
 
   .video-block__iframe iframe {
     height: 12.5rem;
+  }
+
+  .item-prof {
+    width: 100%;
+  }
+
+  .card-download__main {
+    text-align: center;
+  }
+
+  .card-download__main br {
+    display: none;
+  }
+
+  .card-download__toolbar {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .card-download__btn {
+    margin-right: 0px;
+  }
+
+  .card-download__btn-app {
+    display: block;
+    margin-right: 0px;
+    margin-bottom: 20px;
   }
 
   .slider-front__footer {
