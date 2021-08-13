@@ -4019,6 +4019,10 @@ img.mfp-img {
   background: linear-gradient(90deg, #ffffff 62%, rgba(255, 255, 255, 0) 100%);
 }
 
+.title-card--clean .title-card__wrapper {
+  background: none;
+}
+
 .title-card__discript {
   color: #58595B;
   margin-bottom: 1rem;
@@ -4347,6 +4351,7 @@ img.mfp-img {
   padding: 2.1875rem;
   border-radius: 5px;
   background-color: #ffffff;
+  line-height: 1.5;
 }
 
 .factoid-column--dark {

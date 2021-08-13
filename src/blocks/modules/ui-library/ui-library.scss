@@ -458,6 +458,11 @@
 			background: linear-gradient(90deg, #ffffff 62%, rgba(255, 255, 255, 0) 100%);
 		}
 	}
+	&--clean {
+		.title-card__wrapper {
+			background: none;
+		}
+	}
 	&__discript {
 		color: $gray;
 		margin-bottom: 1rem;
@@ -873,6 +878,7 @@
 	padding: rem(35px);
 	border-radius: 5px;
 	background-color: $light;
+	line-height: 1.5;
 	@include r(1200) {
 		padding: rem(25px);
 		width: 100%;
