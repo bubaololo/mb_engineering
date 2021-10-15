@@ -1,0 +1,23 @@
+.toolbar {
+    display: flex;
+    align-items: center;
+    @include r(1200) {
+        flex-direction: column;
+    }
+    &--buttons {
+        gap: 18px;
+        @include r(1200) {
+            gap: 10px;
+        }
+    }
+    &--end {
+        justify-content: flex-end;
+    }
+    &__btn {
+        padding-left: 20px;
+        padding-right: 20px;
+        @include r(1200) {
+            width: 100%;
+        }
+    }
+}

@@ -1,8 +1,10 @@
-svg, a {
+svg,
+a {
 	transition: 0.3s all;
 }
 
-svg, img {
+svg,
+img {
 	display: block;
 }
 
@@ -23,17 +25,15 @@ svg, img {
 	scroll-behavior: smooth;
 	&--light {
 		background-color: $light;
-		color: $black
+		color: $black;
 	}
 	&--dark {
 		background-color: $black;
 		color: $light;
 	}
 	@include r(1100) {
-
 	}
 	@include r(580) {
-
 	}
 }
 
@@ -71,7 +71,6 @@ svg, img {
 				background-color: $light;
 				color: $black;
 				@include r(1100) {
-
 				}
 			}
 		}
@@ -82,9 +81,22 @@ svg, img {
 			color: $light;
 			&__container {
 				@include r(1100) {
-
 				}
 			}
+		}
+	}
+}
+
+.mb {
+	&-80 {
+		margin-bottom: 80px;
+	}
+}
+
+.mbm {
+	&-40 {
+		@include r(1100) {
+			margin-bottom: 40px;
 		}
 	}
 }

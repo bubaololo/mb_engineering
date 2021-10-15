@@ -1,0 +1,16 @@
+.block-wrapper {
+  &--padding {
+    padding: 50px 45px;
+    @include r(1200) {
+      padding: 0px;
+    }
+  }
+  &--border {
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    border-radius: 5px;
+    @include r(1200) {
+      border: none;
+    }
+  }
+}

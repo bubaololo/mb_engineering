@@ -25,6 +25,15 @@
 @import "modules/1_map/map";
 @import "modules/modal/modal";
 
+// Дальше по БЭМ, отдельный блок - отдельный файл
+@import "modules/sidebar/sidebar";
+@import "modules/link-aside/link-aside";
+@import "modules/select-aside/select-aside";
+@import "modules/block-wrapper/block-wrapper";
+@import "modules/block-frk/block-frk";
+@import "modules/block-diagram/block-diagram";
+@import "modules/toolbar/toolbar";
+@import "modules/slider-news/slider-news";
 // Плагины
 
 @include r(1200) {

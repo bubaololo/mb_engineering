@@ -165,30 +165,41 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding-right: 20px;
+	gap: 20px;
 	width: 100%;
 	margin-bottom: rem(50px);
 	@include r(1200) {
 		margin-bottom: rem(30px);
+		padding-right: 0;
 	}
 	&__col {
 		padding-right: 20px;
+		@include r(1200) {
+			padding-right: 0;
+		}
 		&--12 {
 			width: 100%;
 		}
+		&--9 {
+			width: calc(100% / 12 * 9 - 15px);
+			@include r(1200) {
+				width: 100%;
+			}
+		}
 		&--6 {
-			width: 50%;
+			width: calc(50% - 15px);
 			@include r(1200) {
 				width: 100%;
 			}
 		}
 		&--4 {
-			width: calc(100% / 3);
+			width: calc(100% / 3 - 15px);
 			@include r(1200) {
 				width: 100%;
 			}
 		}
 		&--3 {
-			width: 25%;
+			width: calc(25% - 15px);
 			@include r(1200) {
 				width: 100%;
 			}

@@ -13,3 +13,7 @@ import "%modules%/form/form";
 import "%modules%/event/event";
 import "%modules%/modal/modal";
 import "%modules%/1_events/events";
+
+// Дальше все по БЭМ
+import "%modules%/tab/tab";
+import "%modules%/slider-news/slider-news";
