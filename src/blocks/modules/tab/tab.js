@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs("data-link", "data-block", 'link-aside--active', 'data-select');
 
     initTabs("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select');
+
+    initTabs("data-link-main", "data-block-main", 'btn--active-tab', '');
 });
 
 let initTabs = (link, block, activeClass, select) => {
@@ -16,15 +18,17 @@ let initTabs = (link, block, activeClass, select) => {
         })
     }
 
-    let selectEl = document.querySelectorAll('[' + select + ']');
+    if (select) {
+        let selectEl = document.querySelectorAll('[' + select + ']');
 
-    for (let i = 0; i < selectEl.length; i++) {
-        selectEl[i].addEventListener('change', (e) => {
-            console.log(e.target.value);
-            // e.preventDefault();
-            initLink(+e.target.value);
-        });
+        for (let i = 0; i < selectEl.length; i++) {
+            selectEl[i].addEventListener('change', (e) => {
+                initLink(+e.target.value);
+            });
+        }
     }
+
+
 
     let initLink = (index) => {
 
@@ -47,3 +51,5 @@ let initTabs = (link, block, activeClass, select) => {
 
     initLink(1);
 }
+
+// Для больших табов в ФРП

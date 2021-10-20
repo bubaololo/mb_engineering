@@ -161,10 +161,17 @@
 		border: 1px solid #000000;
 	}
 	&--grey-border {
-		border: 1px solid #EBEBEB;
+		border: 1px solid #ebebeb;
 		background-color: $light;
 		span {
 			color: #000000;
+		}
+	}
+	&--active-tab {
+		background-color: #000000 !important;
+
+		span {
+			color: $light !important;
 		}
 	}
 	svg + span {

@@ -3818,12 +3818,20 @@ img.mfp-img {
 }
 
 .btn--grey-border {
-  border: 1px solid #EBEBEB;
+  border: 1px solid #ebebeb;
   background-color: #ffffff;
 }
 
 .btn--grey-border span {
   color: #000000;
+}
+
+.btn--active-tab {
+  background-color: #000000 !important;
+}
+
+.btn--active-tab span {
+  color: #ffffff !important;
 }
 
 .btn svg + span {
@@ -13390,6 +13398,10 @@ body.modal-open .mm-slideout {
 
 .toolbar--end {
   justify-content: flex-end;
+}
+
+.toolbar--center {
+  justify-content: center;
 }
 
 .toolbar__btn {

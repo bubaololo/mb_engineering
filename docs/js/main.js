@@ -1212,6 +1212,7 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', function () {
   initTabs("data-link", "data-block", 'link-aside--active', 'data-select');
   initTabs("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select');
+  initTabs("data-link-main", "data-block-main", 'btn--active-tab', '');
 });
 
 var initTabs = function initTabs(link, block, activeClass, select) {
@@ -1229,14 +1230,14 @@ var initTabs = function initTabs(link, block, activeClass, select) {
     _loop(i);
   }
 
-  var selectEl = document.querySelectorAll('[' + select + ']');
+  if (select) {
+    var selectEl = document.querySelectorAll('[' + select + ']');
 
-  for (var _i = 0; _i < selectEl.length; _i++) {
-    selectEl[_i].addEventListener('change', function (e) {
-      console.log(e.target.value); // e.preventDefault();
-
-      initLink(+e.target.value);
-    });
+    for (var _i = 0; _i < selectEl.length; _i++) {
+      selectEl[_i].addEventListener('change', function (e) {
+        initLink(+e.target.value);
+      });
+    }
   }
 
   var initLink = function initLink(index) {
@@ -1258,7 +1259,7 @@ var initTabs = function initTabs(link, block, activeClass, select) {
   };
 
   initLink(1);
-};
+}; // Для больших табов в ФРП
 
 /***/ }),
 
