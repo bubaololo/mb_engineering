@@ -13316,6 +13316,7 @@ body.modal-open .mm-slideout {
 
 .block-frk__item {
   width: calc(100% / 3);
+  padding-right: 30px;
 }
 
 .block-frk__item :last-child {
@@ -14648,6 +14649,7 @@ body.modal-open .mm-slideout {
   .block-frk__item {
     width: 100%;
     margin-bottom: 20px;
+    padding-right: 0;
   }
 
   .block-frk__item strong {
