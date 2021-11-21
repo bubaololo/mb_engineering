@@ -1,55 +1,100 @@
+// ООП
+
 document.addEventListener('DOMContentLoaded', () => {
-    initTabs("data-link", "data-block", 'link-aside--active', 'data-select');
-
-    initTabs("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select');
-
-    initTabs("data-link-main", "data-block-main", 'btn--active-tab', '');
+    window.tab1 = new Tab("data-link", "data-block", 'link-aside--active', 'data-select', 'block-frk__link', false, true);
+    window.tab2 = new Tab("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select', false, false, false);
+    window.tab3 = new Tab("data-link-main", "data-block-main", 'btn--active-tab', '', false, false, false);
 });
 
-let initTabs = (link, block, activeClass, select) => {
-    let button = document.querySelectorAll('[' + link + ']');
+class Tab {
+    constructor(link, block, activeClass, select, linkDoc, defaultIndex, setDocDefault) {
+        this.button = document.querySelectorAll('[' + link + ']');
+        this.tab = document.querySelectorAll('[' + block + ']');
 
-    let tab = document.querySelectorAll('[' + block + ']');
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            initLink(button[i].getAttribute(link));
-        })
-    }
+        for (let i = 0; i < this.button.length; i++) {
+            this.button[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                this.initLink(this.button[i].getAttribute(link), block, this.button, link, activeClass);
 
-    if (select) {
-        let selectEl = document.querySelectorAll('[' + select + ']');
+                if (setDocDefault) {
 
-        for (let i = 0; i < selectEl.length; i++) {
-            selectEl[i].addEventListener('change', (e) => {
-                initLink(+e.target.value);
-            });
+                    console.log('Сбрасываем документы');
+
+                    this.setDocBlock();
+                }
+            })
         }
-    }
 
+        if (select) {
+            let selectEl = document.querySelectorAll('[' + select + ']');
 
+            for (let i = 0; i < selectEl.length; i++) {
+                selectEl[i].addEventListener('change', (e) => {
+                    console.log(+e.target.value);
+                    console.log(block);
+                    console.log(this.button);
 
-    let initLink = (index) => {
+                    this.initLink(+e.target.value, block, this.button);
 
-        for (let i = 0; i < tab.length; i++) {
-            if (index == tab[i].getAttribute(block)) {
-                tab[i].removeAttribute('hidden');
-            } else {
-                tab[i].setAttribute('hidden', '');
+                    if (setDocDefault) {
+
+                        console.log('Сбрасываем документы');
+
+                        this.setDocBlock();
+                    }
+                });
+
             }
         }
 
-        for (let i = 0; i < button.length; i++) {
-            if (index == button[i].getAttribute(link)) {
-                button[i].classList.add(activeClass);
+        if (linkDoc) {
+            let links = document.querySelectorAll('.' + linkDoc);
+
+            for (let i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', () => {
+
+                    this.setDocBlock();
+                });
+            }
+
+        }
+
+        if (defaultIndex) {
+            this.initLink(defaultIndex, block, this.button, link, activeClass);
+        } else {
+            this.initLink(1, block, this.button, link, activeClass);
+        }
+
+    }
+
+    initLink(index, block, button, link, activeClass) {
+
+        for (let i = 0; i < this.tab.length; i++) {
+            if (index == this.tab[i].getAttribute(block)) {
+                this.tab[i].removeAttribute('hidden');
             } else {
-                button[i].classList.remove(activeClass);
+                this.tab[i].setAttribute('hidden', '');
+            }
+        }
+
+        for (let i = 0; i < this.button.length; i++) {
+            if (index == this.button[i].getAttribute(link)) {
+                this.button[i].classList.add(activeClass);
+            } else {
+                this.button[i].classList.remove(activeClass);
             }
         }
     }
 
-    initLink(1);
+    setDocBlock() {
+        let activeLinks = document.querySelectorAll('[data-link-default]');
+
+        for (let i = 0; i < activeLinks.length; i++) {
+            if (activeLinks[i].offsetParent && !activeLinks[i].getAttribute("data-link-default")) {
+                let activeIndex = activeLinks[i].getAttribute('data-tab-link');
+                window.tab2 = new Tab("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select', false, activeIndex);
+            }
+        }
+    }
 }
-
-// Для больших табов в ФРП

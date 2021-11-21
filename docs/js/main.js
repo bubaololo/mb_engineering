@@ -1209,57 +1209,118 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// ООП
 document.addEventListener('DOMContentLoaded', function () {
-  initTabs("data-link", "data-block", 'link-aside--active', 'data-select');
-  initTabs("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select');
-  initTabs("data-link-main", "data-block-main", 'btn--active-tab', '');
+  window.tab1 = new Tab("data-link", "data-block", 'link-aside--active', 'data-select', 'block-frk__link', false, true);
+  window.tab2 = new Tab("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select', false, false, false);
+  window.tab3 = new Tab("data-link-main", "data-block-main", 'btn--active-tab', '', false, false, false);
 });
 
-var initTabs = function initTabs(link, block, activeClass, select) {
-  var button = document.querySelectorAll('[' + link + ']');
-  var tab = document.querySelectorAll('[' + block + ']');
+var Tab = /*#__PURE__*/function () {
+  function Tab(link, block, activeClass, select, linkDoc, defaultIndex, setDocDefault) {
+    var _this = this;
 
-  var _loop = function _loop(i) {
-    button[i].addEventListener('click', function (e) {
-      e.preventDefault();
-      initLink(button[i].getAttribute(link));
-    });
-  };
+    _classCallCheck(this, Tab);
 
-  for (var i = 0; i < button.length; i++) {
-    _loop(i);
-  }
+    this.button = document.querySelectorAll('[' + link + ']');
+    this.tab = document.querySelectorAll('[' + block + ']');
 
-  if (select) {
-    var selectEl = document.querySelectorAll('[' + select + ']');
+    var _loop = function _loop(i) {
+      _this.button[i].addEventListener('click', function (e) {
+        e.preventDefault();
 
-    for (var _i = 0; _i < selectEl.length; _i++) {
-      selectEl[_i].addEventListener('change', function (e) {
-        initLink(+e.target.value);
+        _this.initLink(_this.button[i].getAttribute(link), block, _this.button, link, activeClass);
+
+        if (setDocDefault) {
+          console.log('Сбрасываем документы');
+
+          _this.setDocBlock();
+        }
       });
+    };
+
+    for (var i = 0; i < this.button.length; i++) {
+      _loop(i);
+    }
+
+    if (select) {
+      var selectEl = document.querySelectorAll('[' + select + ']');
+
+      for (var _i = 0; _i < selectEl.length; _i++) {
+        selectEl[_i].addEventListener('change', function (e) {
+          console.log(+e.target.value);
+          console.log(block);
+          console.log(_this.button);
+
+          _this.initLink(+e.target.value, block, _this.button);
+
+          if (setDocDefault) {
+            console.log('Сбрасываем документы');
+
+            _this.setDocBlock();
+          }
+        });
+      }
+    }
+
+    if (linkDoc) {
+      var links = document.querySelectorAll('.' + linkDoc);
+
+      for (var _i2 = 0; _i2 < links.length; _i2++) {
+        links[_i2].addEventListener('click', function () {
+          _this.setDocBlock();
+        });
+      }
+    }
+
+    if (defaultIndex) {
+      this.initLink(defaultIndex, block, this.button, link, activeClass);
+    } else {
+      this.initLink(1, block, this.button, link, activeClass);
     }
   }
 
-  var initLink = function initLink(index) {
-    for (var _i2 = 0; _i2 < tab.length; _i2++) {
-      if (index == tab[_i2].getAttribute(block)) {
-        tab[_i2].removeAttribute('hidden');
-      } else {
-        tab[_i2].setAttribute('hidden', '');
+  _createClass(Tab, [{
+    key: "initLink",
+    value: function initLink(index, block, button, link, activeClass) {
+      for (var i = 0; i < this.tab.length; i++) {
+        if (index == this.tab[i].getAttribute(block)) {
+          this.tab[i].removeAttribute('hidden');
+        } else {
+          this.tab[i].setAttribute('hidden', '');
+        }
+      }
+
+      for (var _i3 = 0; _i3 < this.button.length; _i3++) {
+        if (index == this.button[_i3].getAttribute(link)) {
+          this.button[_i3].classList.add(activeClass);
+        } else {
+          this.button[_i3].classList.remove(activeClass);
+        }
       }
     }
+  }, {
+    key: "setDocBlock",
+    value: function setDocBlock() {
+      var activeLinks = document.querySelectorAll('[data-link-default]');
 
-    for (var _i3 = 0; _i3 < button.length; _i3++) {
-      if (index == button[_i3].getAttribute(link)) {
-        button[_i3].classList.add(activeClass);
-      } else {
-        button[_i3].classList.remove(activeClass);
+      for (var i = 0; i < activeLinks.length; i++) {
+        if (activeLinks[i].offsetParent && !activeLinks[i].getAttribute("data-link-default")) {
+          var activeIndex = activeLinks[i].getAttribute('data-tab-link');
+          window.tab2 = new Tab("data-tab-link", "data-tab-block", 'link-aside--active', 'data-select', false, activeIndex);
+        }
       }
     }
-  };
+  }]);
 
-  initLink(1);
-}; // Для больших табов в ФРП
+  return Tab;
+}();
 
 /***/ }),
 
